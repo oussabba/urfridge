@@ -1,0 +1,177 @@
+@font-face {
+  font-family: Baloo;
+  src: url(/fonts/Baloo2-Regular.ttf?6208e6316eed6b9e1de0a022ace38958);
+}
+@font-face {
+  font-family: BalooSemiBold;
+  src: url(/fonts/Baloo2-SemiBold.ttf?ff177ef2da64b35e00a4a95d01cf370f);
+}
+@font-face {
+  font-family: BalooMedium;
+  src: url(/fonts/Baloo2-Medium.ttf?1f413877aed565cf46d36eee02b2d808);
+}
+body {
+  font-family: Baloo !important;
+  background-color: #e0e0e0;
+}
+
+.navbar {
+  background-color: #a2c11c !important;
+}
+.navbar a {
+  color: #283739 !important;
+  font-size: 17px;
+  font-family: BalooMedium;
+  text-align: center;
+}
+.navbar .navbar-nav {
+  margin-left: 150px;
+}
+.navbar .nav-item {
+  margin-left: 30px;
+}
+.navbar .nav-item:hover {
+  background-color: #283739;
+  color: #a2c11c !important;
+}
+.navbar .items-to-right {
+  position: absolute;
+  right: 20px;
+  display: flex;
+}
+
+.footer-1 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 10%;
+  height: 60px;
+  border-radius: 0 45px 0 0;
+  background-color: #a2c11c;
+}
+
+.footer-2 {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 25%;
+  height: 60px;
+  border-radius: 45px 0 0 0;
+  background-color: #a2c11c;
+  text-align: center;
+  padding-top: 5px;
+}
+.footer-2 a {
+  color: #283739;
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+.footer-text {
+  position: fixed;
+  left: 10%;
+  bottom: 0;
+  width: 65%;
+  height: 60px;
+  text-align: center;
+  font-size: 18px;
+  font-family: BalooMedium;
+  color: #283739;
+  padding-top: 20px;
+}
+.footer-text a {
+  text-decoration: none !important;
+  color: #283739;
+}
+
+.social-media-fixed {
+  height: 200px;
+  width: 42px;
+  border-radius: 10px;
+  background-color: #283739;
+  font-size: 25px;
+  position: fixed;
+  left: 5px;
+  top: 40%;
+  padding: 10px;
+}
+.social-media-fixed a {
+  color: #a2c11c;
+}
+
+.centred-h1 {
+  margin: 20px auto;
+}
+
+.auth-form, .signup-form, .signin-form {
+  background-color: #283739;
+  border-radius: 25px;
+  margin: auto auto;
+  width: 50%;
+  padding: 25px;
+}
+.auth-form label, .signup-form label, .signin-form label {
+  color: white;
+  font-size: 18px;
+  padding-top: 8px;
+}
+.auth-form .form-input, .signup-form .form-input, .signin-form .form-input {
+  border-radius: 20px;
+}
+.auth-form .form-sentence, .signup-form .form-sentence, .signin-form .form-sentence {
+  margin: 0 auto;
+  color: white;
+}
+.auth-form hr, .signup-form hr, .signin-form hr {
+  border: 0.1px solid #2e474a;
+}
+.auth-form a, .signup-form a, .signin-form a {
+  text-decoration: none;
+}
+
+input[type=checkbox]:focus {
+  outline: none !important;
+}
+
+.margin-tp-10 {
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background-color: #2c5d63;
+  color: white;
+  font-size: 22px;
+  border-radius: 25px;
+  width: 115px;
+  height: 48px;
+  margin: 20px auto;
+  border-style: none;
+}
+.submit-btn:focus {
+  outline: none;
+}
+
+.facebook-auth {
+  background-color: #4267b2;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  height: 50px;
+  padding: 12px;
+}
+
+.google-auth {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  height: 50px;
+  padding: 12px;
+}
+.google-auth img {
+  height: 23px;
+  width: 23px;
+}
+

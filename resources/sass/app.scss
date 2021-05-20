@@ -1,0 +1,159 @@
+@import "variables";
+body {
+    font-family: Baloo !important;
+    background-color: $backGroundColor;
+}
+.navbar {
+    background-color: $color2 !important;
+    a {
+        color: $color1 !important;
+        font-size: 17px;
+        font-family: BalooMedium;
+        text-align: center;
+    }
+    .navbar-nav {
+        margin-left: 150px;
+    }
+    .nav-item {
+        margin-left: 30px;
+        &:hover {
+            background-color: $color1;
+            color: $color2 !important;
+        }
+    }
+    .items-to-right {
+        position: absolute;
+        right: 20px;
+        display: flex;
+    }
+}
+.footer-1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    height: 60px;
+    border-radius: 0 45px 0 0;
+    background-color: $color2;
+}
+.footer-2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    height: 60px;
+    border-radius: 45px 0 0 0;
+    background-color: $color2;
+    text-align: center;
+    padding-top: 5px;
+    a {
+        color: $color1;
+        font-size: 40px;
+        margin-left: 10px;
+    }
+}
+.footer-text {
+    position: fixed;
+    left: 10%;
+    bottom: 0;
+    width: 65%;
+    height: 60px;
+    text-align: center;
+    font-size: 18px;
+    font-family: BalooMedium;
+    color: $color1;
+    padding-top: 20px;
+    a {
+        text-decoration: none !important;
+        color: $color1;
+    }
+}
+.social-media-fixed {
+    height: 200px;
+    width: 42px;
+    border-radius: 10px;
+    background-color: $color1;
+    font-size: 25px;
+    position: fixed;
+    left: 5px;
+    top: 40%;
+    padding: 10px;
+    a {
+        color: $color2;
+    }
+}
+.centred-h1 {
+    margin: 20px auto;
+}
+.auth-form {
+    background-color: $color1;
+    border-radius: 25px;
+    margin: auto auto;
+    width: 50%;
+    padding: 25px;
+    label {
+        color: white;
+        font-size: 18px;
+        padding-top: 8px;
+    }
+    .form-input {
+        border-radius: 20px;
+    }
+    .form-sentence {
+        margin: 0 auto;
+        color: white;
+    }
+    hr {
+        border: 0.1px solid #2e474a;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+.signin-form {
+    @extend .auth-form;
+}
+.signup-form {
+    @extend .auth-form;
+}
+input[type="checkbox"]:focus {
+    outline: none !important;
+}
+.margin-tp-10 {
+    margin-top: 10px;
+}
+.submit-btn {
+    background-color: $color3;
+    color: white;
+    font-size: 22px;
+    border-radius: 25px;
+    width: 115px;
+    height: 48px;
+    margin: 20px auto;
+    border-style: none;
+    &:focus {
+        outline: none;
+    }
+}
+.facebook-auth {
+    background-color: #4267b2;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    text-align: center;
+    height: 50px;
+    padding: 12px;
+}
+.google-auth {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    border-radius: 10px;
+    text-align: center;
+    height: 50px;
+    padding: 12px;
+    img {
+        height: 23px;
+        width: 23px;
+    }
+}
