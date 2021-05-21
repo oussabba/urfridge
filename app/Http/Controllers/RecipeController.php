@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\RecipeRepository;
 
 class RecipeController extends Controller
 {
+    protected $recipeRepository;
+
+    public function __construct(RecipeRepository $recipeRepository)
+    {
+        $this->recipeRepository=$recipeRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        //
+        return $this->recipeRepository->getAll();
     }
 
     /**
@@ -34,7 +41,7 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->recipeRepository->store($request);
     }
 
     /**
@@ -68,7 +75,7 @@ class RecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->recipeRepository->update($request,$id);
     }
 
     /**
@@ -79,6 +86,6 @@ class RecipeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->recipeRepository->deleteRecipe($id);
     }
 }
