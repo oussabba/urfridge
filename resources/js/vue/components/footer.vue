@@ -6,11 +6,11 @@
       <a href="#">Sun Microsystem</a>
     </div>
     <div class="footer-2">
-      <a href="#"><i class="fab fa-facebook-square"></i></a>
-      <a href="#"><i class="fab fa-instagram-square"></i></a>
-      <a href="#"><i class="fab fa-twitter-square"></i></a>
-      <a href="#"><i class="fab fa-pinterest-square"></i></a>
-      <a href="#"><i class="fab fa-youtube-square"></i></a>
+      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook-square' }"/></a>
+      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram-square'}"/></a>
+      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square'}"/></a>
+      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'pinterest-square'}"/></a>
+      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'youtube-square'}"/></a>
     </div>
   </footer>
 </template>

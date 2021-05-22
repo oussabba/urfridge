@@ -7,15 +7,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/"><i class="fas fa-home"></i> <br>Home</a>
-                    <a class="nav-item nav-link" href="/search"><i class="fas fa-search"></i> <br>Search</a>
-                    <a class="nav-item nav-link" href="/explore"><i class="fas fa-compass"></i> <br>Explore</a>
-                    <a class="nav-item nav-link" href="/recipes"><i class="fas fa-drumstick-bite"></i> <br>Recipes</a>
-                    <a class="nav-item nav-link" href="/books"><i class="fas fa-book"></i> <br>Books</a>
+                    <a class="nav-item nav-link" href="/"><font-awesome-icon icon="home" /> <br>Home</a>
+                    <a class="nav-item nav-link" href="/search"><font-awesome-icon icon="search"/> <br>Search</a>
+                    <a class="nav-item nav-link" href="/explore"><font-awesome-icon icon="compass"/> <br>Explore</a>
+                    <a class="nav-item nav-link" href="/recipes"><font-awesome-icon icon="drumstick-bite"/> <br>Recipes</a>
+                    <a class="nav-item nav-link" href="/books"><font-awesome-icon icon="book"/> <br>Books</a>
                     <!-- sign in and sign up -->
                     <div class="items-to-right">
-                        <a class="nav-item nav-link" href="/signin"><i class="fas fa-sign-in-alt"></i> <br>Sign in</a>
-                        <a class="nav-item nav-link" href="/signup"><i class="fas fa-user-plus"></i> <br>Sign up</a>
+                        <a class="nav-item nav-link" href="/signin"><font-awesome-icon icon="sign-in-alt"/> <br>Sign in</a>
+                        <a class="nav-item nav-link" href="/signup"><font-awesome-icon icon="user-plus"/> <br>Sign up</a>
                     </div>
                 </div>
             </div>
