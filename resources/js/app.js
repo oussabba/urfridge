@@ -6,7 +6,8 @@ import Appfooter from "./vue/components/footer";
 import SocialMediaBar from "./vue/components/social-media-bar";
 import SigninForm from "./vue/components/signin-form";
 import SignupForm from "./vue/components/signup-form";
-import CarouselBanner from "./vue/components/carousel-banner";
+//import CarouselBanner from "./vue/components/carousel-banner";
+import HomeMain from "./vue/components/main/home-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -51,6 +52,7 @@ const app = new Vue({
         SocialMediaBar,
         SigninForm,
         SignupForm,
-        CarouselBanner
+        //CarouselBanner,
+        HomeMain
     }
 });

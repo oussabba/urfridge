@@ -1,30 +1,24 @@
 <template>
   <div id="carouselBannerIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselBannerIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselBannerIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselBannerIndicators" data-slide-to="2"></li>
+      <li
+        v-for="slide in bannerSlides"
+        :key="slide.id"
+        data-target="#carouselBannerIndicators"
+        data-slide-to="0"
+        :class="slide.id==1 ? 'active':''"
+      ></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="#" alt="First slide" />
+      <div
+        v-for="slide in bannerSlides"
+        :key="slide.id"
+        :class="slide.id==1 ? 'carousel-item active':'carousel-item'"
+      >
+        <img class="d-block w-100" :src="slide.image_url" alt="Second slide" />
         <div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="#" alt="Second slide" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="#" alt="Third slide" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
+          <h2>{{ slide.title }}</h2>
+          <p>{{ slide.sub_title }}</p>
         </div>
       </div>
     </div>
@@ -51,6 +45,45 @@
 
 <script>
 export default {
-
+  data: function () {
+    return {
+      bannerSlides: []
+    }
+  },
+  methods: {
+    getBannerSlides() {
+      axios.get('api/banner')
+        .then(response => {
+          this.bannerSlides = response.data
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+  },
+  created() {
+    this.getBannerSlides();
+  }
 }
 </script>
+
+<style scoped>
+/* img {
+  margin: auto;
+} */
+.carousel-inner {
+  width: 50%;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+.carousel-control-prev {
+  left: 20%;
+}
+.carousel-control-next {
+  right: 20%;
+}
+.carousel-inner h2,
+p {
+  color: #283739 !important;
+}
+</style>
