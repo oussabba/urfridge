@@ -72,15 +72,15 @@ export default {
   margin: auto;
 } */
 .carousel-inner {
-  width: 50%;
+  width: 70%;
   margin: 20px auto;
   border-radius: 20px;
 }
 .carousel-control-prev {
-  left: 20%;
+  left: 10%;
 }
 .carousel-control-next {
-  right: 20%;
+  right: 10%;
 }
 .carousel-inner h2,
 p {

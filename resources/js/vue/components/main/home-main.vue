@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <carousel-banner></carousel-banner>
     <last-added-recipes></last-added-recipes>
   </div>
