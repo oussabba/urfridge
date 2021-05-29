@@ -6,16 +6,31 @@
       <a href="#">Sun Microsystem</a>
     </div>
     <div class="footer-2">
-      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook-square' }"/></a>
-      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram-square'}"/></a>
-      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square'}"/></a>
-      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'pinterest-square'}"/></a>
-      <a href="#"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'youtube-square'}"/></a>
+      <a href="#">
+        <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook-square' }" />
+      </a>
+      <a href="#">
+        <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram-square'}" />
+      </a>
+      <a href="#">
+        <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square'}" />
+      </a>
+      <a href="#">
+        <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'pinterest-square'}" />
+      </a>
+      <a href="#">
+        <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'youtube-square'}" />
+      </a>
     </div>
   </footer>
 </template>
 <script>
 export default {
-  setup() {},
+  setup() { },
 };
 </script>
+<style scoped>
+footer {
+  padding-top: 120px;
+}
+</style>

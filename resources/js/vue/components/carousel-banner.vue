@@ -16,7 +16,7 @@
         :class="slide.id==1 ? 'carousel-item active':'carousel-item'"
       >
         <img class="d-block w-100" :src="slide.image_url" alt="Second slide" />
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption">
           <h2>{{ slide.title }}</h2>
           <p>{{ slide.sub_title }}</p>
         </div>
@@ -72,16 +72,16 @@ export default {
   margin: auto;
 } */
 .carousel-inner {
-  width: 70%;
+  width: 100%;
   margin: 20px auto;
   border-radius: 20px;
 }
-.carousel-control-prev {
-  left: 10%;
+/* .carousel-control-prev {
+  left: 0%;
 }
 .carousel-control-next {
-  right: 10%;
-}
+  right: 0%;
+} */
 .carousel-inner h2,
 p {
   color: #283739 !important;

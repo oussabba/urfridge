@@ -6,7 +6,6 @@ import Appfooter from "./vue/components/footer";
 import SocialMediaBar from "./vue/components/social-media-bar";
 import SigninForm from "./vue/components/signin-form";
 import SignupForm from "./vue/components/signup-form";
-//import CarouselBanner from "./vue/components/carousel-banner";
 import HomeMain from "./vue/components/main/home-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -17,7 +16,9 @@ import {
     faDrumstickBite,
     faBook,
     faSignInAlt,
-    faUserPlus
+    faUserPlus,
+    faHeart,
+    faPlus
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faFacebookSquare,
@@ -36,11 +37,13 @@ library.add(
     faBook,
     faSignInAlt,
     faUserPlus,
+    faHeart,
     faFacebookSquare,
     faInstagramSquare,
     faTwitterSquare,
     faPinterestSquare,
-    faYoutubeSquare
+    faYoutubeSquare,
+    faPlus
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -52,7 +55,6 @@ const app = new Vue({
         SocialMediaBar,
         SigninForm,
         SignupForm,
-        //CarouselBanner,
         HomeMain
     }
 });

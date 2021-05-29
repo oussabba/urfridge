@@ -2,6 +2,7 @@
 body {
     font-family: Baloo !important;
     background-color: $backGroundColor;
+    position: relative;
 }
 .navbar {
     background-color: $color2 !important;
@@ -28,7 +29,7 @@ body {
     }
 }
 .footer-1 {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 10%;
@@ -37,7 +38,7 @@ body {
     background-color: $color2;
 }
 .footer-2 {
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     width: 25%;
@@ -53,7 +54,7 @@ body {
     }
 }
 .footer-text {
-    position: fixed;
+    position: absolute;
     left: 10%;
     bottom: 0;
     width: 65%;
