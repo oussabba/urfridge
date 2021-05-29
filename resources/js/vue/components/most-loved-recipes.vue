@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1>Last added recipes:</h1>
+  <div class="most-loved-recipes">
+    <h1>Most loved recipes:</h1>
     <div class="row">
       <div
-        v-for="(recipe,index) in lastAddedRecipes "
+        v-for="(recipe,index) in sortedRecipesByLove "
         :key="index"
         class="col-12 col-sm-6 col-md-3"
       >
@@ -12,7 +12,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import RecipeCard from './recipe-card.vue';
 export default {
@@ -21,14 +20,14 @@ export default {
   },
   data: function () {
     return {
-      lastAddedRecipes: []
+      sortedRecipesByLove: []
     }
   },
   methods: {
-    getLastAddedRecipes() {
-      axios.get('api/recipes/8')
+    getSortedRecipes() {
+      axios.get('api/sortedRecipes/8')
         .then(response => {
-          this.lastAddedRecipes = response.data
+          this.sortedRecipesByLove = response.data
         })
         .catch(error => {
           console.log(error);
@@ -36,14 +35,13 @@ export default {
     }
   },
   created() {
-    this.getLastAddedRecipes();
+    this.getSortedRecipes();
   }
 }
 </script>
 
 <style scoped>
-/* h1 {
-  margin-left: 10%;
-} */
+.most-loved-recipes {
+  margin-top: 30px;
+}
 </style>
-

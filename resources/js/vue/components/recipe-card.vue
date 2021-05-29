@@ -11,7 +11,7 @@
     <div class="recipe-card-body">
       <h4 class="recipe-title">{{ recipe.title }}</h4>
       <p class="recipe-desc">{{ recipe.description }}</p>
-      <div class="loved-by">100 &#10084;&#65039; this</div>
+      <div class="loved-by">{{ recipe.number }} &#10084;&#65039; this</div>
     </div>
   </div>
 </template>

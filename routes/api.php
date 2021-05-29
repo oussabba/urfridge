@@ -25,6 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //recipes
 Route::get('/recipes',[RecipeController::class,'index']);
 Route::get('/recipes/{number}',[RecipeController::class,'getLimitedNumberOfRecipes']);
+Route::get('/sortedRecipes/{number}',[RecipeController::class,'sortRecipesByloves']);
 Route::prefix('/recipe')->group( Function(){
     Route::post('/store',[RecipeController::class,'store']);
     Route::put('/{id}',[RecipeController::class,'update']);

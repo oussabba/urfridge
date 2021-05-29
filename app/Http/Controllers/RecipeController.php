@@ -25,7 +25,25 @@ class RecipeController extends Controller
 
     //Get the wanted number of recipes
     public function getLimitedNumberOfRecipes($number){
-        return $this->recipeRepository->getLimitedRecipes($number);
+        $recipes = $this->recipeRepository->getLimitedRecipes($number);
+        //Add new item (number loves) to object json (recipe)
+        $recipes = json_decode($recipes, TRUE);
+        for ($i=0; $i < count($recipes) ; $i++) { 
+            $recipes[$i]["number"] = $this->recipeRepository->getNumberLoves($recipes[$i]["id"]);
+        }
+        $recipes = json_encode($recipes);
+        return $recipes;
+    }
+
+    public function sortRecipesByloves($number){
+        $recipes = $this->getLimitedNumberOfRecipes($number);
+        $recipes = json_decode($recipes, TRUE);
+        usort($recipes, function ($a, $b) {
+            if($a['number']==$b['number']) return 0;
+            return $a['number'] < $b['number']?1:-1;
+        });
+        $recipes = json_encode($recipes);
+        return $recipes;
     }
 
     /**
