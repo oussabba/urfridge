@@ -6,11 +6,11 @@
         <font-awesome-icon icon="plus" class="plus-icon" />
         <span class="save-text">save recipe</span>
       </div>
-      <img src="/storage/img/recipes/image.jpg" alt="#" />
+      <img :src="'/storage/img/recipes/'+ recipe.image_url" alt="#" />
     </div>
     <div class="recipe-card-body">
-      <h4 class="recipe-title">Tagine l7ot</h4>
-      <p class="recipe-desc">bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+      <h4 class="recipe-title">{{ recipe.title }}</h4>
+      <p class="recipe-desc">{{ recipe.description }}</p>
       <div class="loved-by">100 &#10084;&#65039; this</div>
     </div>
   </div>
@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  props: ["recipe"],
   data: function () {
     return {
       // defaultSaveRecipeText: '&#43;',

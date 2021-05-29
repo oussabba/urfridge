@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class RecipeRepository.
@@ -36,6 +37,13 @@ class RecipeRepository
 
     public function getAll(){
         return Recipe::orderBy('id','DESC')->get();
+    }
+
+    public function getLimitedRecipes($number){
+        return Recipe::orderBy('id','DESC')->take($number)->get();
+    }
+    public function getNumberLoves($id){
+        return DB::table('love_recipe')->where('id_recipe', $id)->count();
     }
 
     public function getPaginate($n)
