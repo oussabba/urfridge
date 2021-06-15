@@ -46,6 +46,10 @@ class RecipeController extends Controller
         return $recipes;
     }
 
+    public function searchRecipeByTitle(Request $request){
+        return $this->recipeRepository->searchForRecipeByTitle($request);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -110,5 +114,17 @@ class RecipeController extends Controller
     public function destroy($id)
     {
         return $this->recipeRepository->deleteRecipe($id);
+    }
+
+    public function getDiets(){
+        return $this->recipeRepository->getAllDiets();
+    }
+
+    public function getCategories(){
+        return $this->recipeRepository->getAllCategories();
+    }
+
+    public function getIndredients(Request $request){
+        return $this->recipeRepository->getIngredientsByCategorie($request);
     }
 }

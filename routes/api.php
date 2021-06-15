@@ -31,6 +31,16 @@ Route::prefix('/recipe')->group( Function(){
     Route::put('/{id}',[RecipeController::class,'update']);
     Route::delete('/{id}',[RecipeController::class,'destroy']);
 });
+//search for a recipe
+Route::get('/searchRecipes',[RecipeController::class,'searchRecipeByTitle']);
 //Carousel banner
 Route::get('/banner',[BannerController::class,'index']);
+//get all diets
+Route::get('/diets',[RecipeController::class,'getDiets']);
+//get all ingradients categories
+Route::get('/ing-categories',[RecipeController::class,'getCategories']);
+//get ingredients by categorie
+Route::get('/ingredients',[RecipeController::class,'getIndredients']);
+
+
 

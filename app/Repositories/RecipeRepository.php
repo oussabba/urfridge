@@ -45,6 +45,35 @@ class RecipeRepository
     public function getNumberLoves($id){
         return DB::table('love_recipe')->where('id_recipe', $id)->count();
     }
+    public function searchForRecipeByTitle(Request $request){
+        $query=$request->q;
+        $diet=$request->diet;
+        $pTime=$request->time;
+        $searchedRecipes = Recipe::select('*')
+                           ->where([
+                                ['title', 'LIKE', '%'.$query.'%'],
+                                ['total_time','=',$pTime]
+                                ])
+                           ->get();
+        return $searchedRecipes;
+    }
+
+    public function getAllDiets(){
+        return DB::table('diets')->get();
+    }
+
+    public function getAllCategories(){
+        return DB::table('ingredient_categorie')->get();
+    }
+
+    public function getIngredientsByCategorie(Request $request){
+        $categorie=$request->cat;
+        return DB::table('ingredient')
+            ->join('ingredient_cat', 'ingredient.id_ingredient', '=', 'ingredient_cat.id_ingredient')
+            ->select('ingredient.*')
+            ->where('ingredient_cat.id_categorie','=',$categorie)
+            ->get();
+    }
 
     public function getPaginate($n)
 	{
