@@ -40,4 +40,8 @@ class PagesController extends Controller
     {
         return view('signup');
     }
+
+    public function recipePage(){
+        return view('recipe');
+    }
 }

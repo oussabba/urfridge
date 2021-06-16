@@ -23,6 +23,10 @@ class RecipeController extends Controller
         return $this->recipeRepository->getAll();
     }
 
+    public function getRecipe($id){
+        return $this->recipeRepository->getRecipeById($id);
+    }
+
     //Get the wanted number of recipes
     public function getLimitedNumberOfRecipes($number){
         $recipes = $this->recipeRepository->getLimitedRecipes($number);

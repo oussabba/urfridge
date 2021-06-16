@@ -39,6 +39,10 @@ class RecipeRepository
         return Recipe::orderBy('id','DESC')->get();
     }
 
+    public function getRecipeById($id){
+        return Recipe::findOrFail($id);
+    }
+
     public function getLimitedRecipes($number){
         return Recipe::orderBy('id','DESC')->take($number)->get();
     }

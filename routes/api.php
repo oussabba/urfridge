@@ -31,6 +31,8 @@ Route::prefix('/recipe')->group( Function(){
     Route::put('/{id}',[RecipeController::class,'update']);
     Route::delete('/{id}',[RecipeController::class,'destroy']);
 });
+//get a recipe by id
+Route::get('/recipe/{id}',[RecipeController::class,'getRecipe']);
 //search for a recipe
 Route::get('/searchRecipes',[RecipeController::class,'searchRecipeByTitle']);
 //Carousel banner
