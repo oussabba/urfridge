@@ -7,6 +7,7 @@ import SocialMediaBar from "./vue/components/social-media-bar";
 import SigninForm from "./vue/components/signin-form";
 import SignupForm from "./vue/components/signup-form";
 import HomeMain from "./vue/components/main/home-main";
+import RecipeMain from "./vue/components/main/recipe-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -55,6 +56,7 @@ const app = new Vue({
         SocialMediaBar,
         SigninForm,
         SignupForm,
-        HomeMain
+        HomeMain,
+        RecipeMain
     }
 });
