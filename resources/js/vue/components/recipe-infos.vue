@@ -11,13 +11,14 @@
       <h1>{{ recipe.title }}</h1>
       <h6>By: Admin</h6>
       <h6 class="diet">Diet:</h6>
-      <div class="row mg-tp-20">
+      <div class="row mg-tp-40">
         <div class="col-md-9">
           <div class="infos-recipe">
             <div class="row">
               <div class="col-md-4">
                 <div class="info">{{ recipe.total_time }} min</div>
                 <span>Total time</span>
+                <div class="vl"></div>
               </div>
               <div class="col-md-3">
                 <div class="info">{{ recipe.nmbre_ingredients }}</div>
@@ -27,7 +28,7 @@
                 <div class="info">
                   <font-awesome-icon icon="heart" class="heart" />
                 </div>
-                <span>-----</span>
+                <span>{{ numberLoves }} loves this</span>
               </div>
             </div>
           </div>
@@ -36,13 +37,48 @@
           <div class="save-btn">Save</div>
         </div>
       </div>
+      <div class="row mg-tp-40">
+        <div class="share">Share this recipe</div>
+        <social-media></social-media>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import SocialMedia from './share-social-media.vue'
 export default {
+  components: {
+    SocialMedia,
+  },
   props: ['recipe'],
+  data: function () {
+    return {
+      numberLoves: 0,
+    }
+  },
+  methods: {
+    getRecipeId() {
+      var url = window.location.href;
+      return url.substring(
+        url.lastIndexOf("/recipe") + 8,
+        url.lastIndexOf("/")
+      );
+    },
+    getRecipeLoves() {
+      var id = this.getRecipeId();
+      axios.get('http://' + document.location.hostname + ':8000/api/recipe/' + id + '/loves')
+        .then(response => {
+          this.numberLoves = response.data
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+  },
+  created() {
+    this.getRecipeLoves();
+  }
 }
 </script>
 
@@ -96,7 +132,20 @@ span {
 .heart {
   color: red;
 }
-.mg-tp-20 {
-  margin-top: 20px;
+.mg-tp-40 {
+  margin-top: 40px;
+}
+.vl {
+  border-left: 2px solid gray;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+.share {
+  font-size: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 5px;
 }
 </style>

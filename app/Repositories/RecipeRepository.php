@@ -46,9 +46,19 @@ class RecipeRepository
     public function getLimitedRecipes($number){
         return Recipe::orderBy('id','DESC')->take($number)->get();
     }
+
     public function getNumberLoves($id){
         return DB::table('love_recipe')->where('id_recipe', $id)->count();
     }
+
+    public function getRecipeIngredientsById($id){
+        return DB::table('ingredient')
+            ->join('recipe_ingredient', 'recipe_ingredient.id_ingredient', '=', 'ingredient.id_ingredient')
+            ->select('ingredient.*')
+            ->where('recipe_ingredient.id_recipe','=',$id)
+            ->get();
+    }
+
     public function searchForRecipeByTitle(Request $request){
         $query=$request->q;
         $diet=$request->diet;

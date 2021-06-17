@@ -39,6 +39,15 @@ class RecipeController extends Controller
         return $recipes;
     }
 
+    //get number of loves
+    public function getRecipeLoves($id){
+        return $this->recipeRepository->getNumberLoves($id);
+    }
+
+    public function getRecipeIngredients($id){
+        return $this->recipeRepository->getRecipeIngredientsById($id);
+    }
+
     public function sortRecipesByloves($number){
         $recipes = $this->getLimitedNumberOfRecipes($number);
         $recipes = json_decode($recipes, TRUE);

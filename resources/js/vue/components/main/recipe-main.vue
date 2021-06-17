@@ -1,15 +1,21 @@
 <template>
   <div class="container">
     <recipe-infos :recipe="recipe"></recipe-infos>
+    <ad-720-300></ad-720-300>
+    <recipe-body :recipe="recipe"></recipe-body>
   </div>
 </template>
 
 <script>
-import RecipeInfos from '../recipe-infos.vue';
+import RecipeInfos from '../recipe-infos.vue'
+import RecipeBody from '../recipe-body.vue'
+import Ad720_300 from '../ads/ad-720-300.vue'
 
 export default {
   components: {
     RecipeInfos,
+    'recipe-body': RecipeBody,
+    'ad-720-300': Ad720_300
   },
   data: function () {
     return {
