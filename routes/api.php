@@ -34,6 +34,10 @@ Route::prefix('/recipe')->group( Function(){
 Route::get('/recipe/{id}/loves',[RecipeController::class,'getRecipeLoves']);
 //get recipe ingredients
 Route::get('/recipe/{id}/ingredients',[RecipeController::class,'getRecipeIngredients']);
+//get recipe keywords
+Route::get('/recipe/{id}/keywords',[RecipeController::class,'getRecipeKeywords']);
+//get recipe comments
+Route::get('/recipe/{id}/comments',[RecipeController::class,'getRecipeComments']);
 //get a recipe by id
 Route::get('/recipe/{id}',[RecipeController::class,'getRecipe']);
 //search for a recipe

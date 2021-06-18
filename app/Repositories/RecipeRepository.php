@@ -59,6 +59,22 @@ class RecipeRepository
             ->get();
     }
 
+    public function getRecipeKeywordsById($id){
+        return DB::table('keywords')
+            ->join('recipe_keywords', 'recipe_keywords.id_keyword', '=', 'keywords.id_keyword')
+            ->select('keywords.*')
+            ->where('recipe_keywords.id_recipe','=',$id)
+            ->get();
+    }
+
+    public function getRecipeCommentsById($id){
+        return DB::table('comment')
+            ->join('users', 'users.id', '=', 'comment.id_user')
+            ->select('comment.text','users.name')
+            ->where('comment.id_recipe','=',$id)
+            ->get();
+    }
+
     public function searchForRecipeByTitle(Request $request){
         $query=$request->q;
         $diet=$request->diet;

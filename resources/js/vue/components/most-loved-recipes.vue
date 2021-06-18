@@ -1,12 +1,7 @@
 <template>
   <div class="most-loved-recipes">
-    <h1>Most loved recipes:</h1>
     <div class="row">
-      <div
-        v-for="(recipe,index) in sortedRecipesByLove "
-        :key="index"
-        class="col-12 col-sm-6 col-md-3"
-      >
+      <div v-for="(recipe,index) in sortedRecipesByLove " :key="index" class="col">
         <recipe-card :recipe="recipe"></recipe-card>
       </div>
     </div>
@@ -15,17 +10,19 @@
 <script>
 import RecipeCard from './recipe-card.vue';
 export default {
+  props: ['numberRecipes'],
   components: {
     RecipeCard
   },
   data: function () {
     return {
-      sortedRecipesByLove: []
+      sortedRecipesByLove: [],
+      url: 'http://' + document.location.hostname + ':8000/api/sortedRecipes/' + this.numberRecipes
     }
   },
   methods: {
     getSortedRecipes() {
-      axios.get('api/sortedRecipes/8')
+      axios.get(this.url)
         .then(response => {
           this.sortedRecipesByLove = response.data
         })
@@ -42,6 +39,6 @@ export default {
 
 <style scoped>
 .most-loved-recipes {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 </style>

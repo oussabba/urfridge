@@ -3,7 +3,8 @@
     <carousel-banner></carousel-banner>
     <search-recipes-by-ingredients></search-recipes-by-ingredients>
     <last-added-recipes></last-added-recipes>
-    <most-loved-recipes></most-loved-recipes>
+    <h1>Most loved recipes:</h1>
+    <most-loved-recipes :numberRecipes="8"></most-loved-recipes>
     <search-recipes></search-recipes>
   </div>
 </template>

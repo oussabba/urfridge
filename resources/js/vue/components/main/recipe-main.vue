@@ -3,18 +3,21 @@
     <recipe-infos :recipe="recipe"></recipe-infos>
     <ad-720-300></ad-720-300>
     <recipe-body :recipe="recipe"></recipe-body>
+    <comments-section></comments-section>
   </div>
 </template>
 
 <script>
-import RecipeInfos from '../recipe-infos.vue'
-import RecipeBody from '../recipe-body.vue'
+import RecipeInfos from '../recipe-infos'
+import RecipeBody from '../recipe-body'
+import RecipeComments from '../recipe-comments'
 import Ad720_300 from '../ads/ad-720-300.vue'
 
 export default {
   components: {
     RecipeInfos,
     'recipe-body': RecipeBody,
+    'comments-section': RecipeComments,
     'ad-720-300': Ad720_300
   },
   data: function () {

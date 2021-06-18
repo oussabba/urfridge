@@ -180,3 +180,8 @@ h1 {
   font-family: BalooSemiBold !important;
 }
 
+hr {
+  border: 0.1px solid gray;
+  margin: 40px auto;
+}
+
