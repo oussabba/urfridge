@@ -8,6 +8,7 @@ import SigninForm from "./vue/components/signin-form";
 import SignupForm from "./vue/components/signup-form";
 import HomeMain from "./vue/components/main/home-main";
 import RecipeMain from "./vue/components/main/recipe-main";
+import BookMain from "./vue/components/main/book-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -57,6 +58,7 @@ const app = new Vue({
         SigninForm,
         SignupForm,
         HomeMain,
-        RecipeMain
+        RecipeMain,
+        BookMain
     }
 });

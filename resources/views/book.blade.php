@@ -15,6 +15,7 @@
 <body>
     <div id="app">
         <navbar></navbar>
+        <book-main></book-main>
         <social-media-bar></social-media-bar>
         <appfooter></appfooter>
     </div>

@@ -44,4 +44,8 @@ class PagesController extends Controller
     public function recipePage(){
         return view('recipe');
     }
+
+    public function bookPage(){
+        return view('book');
+    }
 }

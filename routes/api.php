@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\BannerController;
 
 use PhpParser\Builder\Function_;
@@ -51,5 +52,13 @@ Route::get('/ing-categories',[RecipeController::class,'getCategories']);
 //get ingredients by categorie
 Route::get('/ingredients',[RecipeController::class,'getIndredients']);
 
+//books
+
+//get a book by id
+Route::get('/book/{id}',[BookController::class,'getBook']);
+//get number of loves of a book
+Route::get('/book/{id}/loves',[BookController::class,'getBookLoves']);
+//get book images
+Route::get('/book/{id}/images',[BookController::class,'getBookImages']);
 
 

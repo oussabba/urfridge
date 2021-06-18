@@ -12,6 +12,8 @@
     "devDependencies": {
         "axios": "^0.21",
         "css-loader": "^5.2.5",
+        "eslint": "^7.16.0",
+        "eslint-plugin-vue": "^7.3.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -20,9 +22,7 @@
         "sass-loader": "^11.0.1",
         "vue-loader": "^15.9.5",
         "vue-template-compiler": "^2.6.12",
-        "webpack": "^5.37.1",
-        "eslint": "^7.16.0",
-        "eslint-plugin-vue": "^7.3.0"
+        "webpack": "^5.37.1"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -31,6 +31,7 @@
         "@fortawesome/vue-fontawesome": "^2.0.2",
         "bootstrap": "^5.0.1",
         "bootstrap-vue": "^2.21.2",
-        "vue": "^2.6.12"
+        "vue": "^2.6.12",
+        "vue-owl-carousel": "^2.0.3"
     }
 }
