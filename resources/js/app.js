@@ -9,6 +9,7 @@ import SignupForm from "./vue/components/signup-form";
 import HomeMain from "./vue/components/main/home-main";
 import RecipeMain from "./vue/components/main/recipe-main";
 import BookMain from "./vue/components/main/book-main";
+import SearchMain from "./vue/components/main/search-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -20,7 +21,11 @@ import {
     faSignInAlt,
     faUserPlus,
     faHeart,
-    faPlus
+    faPlus,
+    faLanguage,
+    faFile,
+    faBuilding,
+    faCalendarAlt
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faFacebookSquare,
@@ -45,7 +50,11 @@ library.add(
     faTwitterSquare,
     faPinterestSquare,
     faYoutubeSquare,
-    faPlus
+    faPlus,
+    faLanguage,
+    faFile,
+    faBuilding,
+    faCalendarAlt
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -59,6 +68,7 @@ const app = new Vue({
         SignupForm,
         HomeMain,
         RecipeMain,
-        BookMain
+        BookMain,
+        SearchMain
     }
 });

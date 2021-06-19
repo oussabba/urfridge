@@ -3,17 +3,7 @@
     <ad-720-300></ad-720-300>
     <div class="row">
       <div class="col-md-4 book-img">
-        <carousel :autoplay="true" :nav="false" :items="1" :autoplayTimeout="10000">
-          <!-- <img src="/storage/img/books/family-meal.jpg" />
-          <img src="/storage/img/books/family-meal.jpg" />
-          <img src="/storage/img/books/family-meal.jpg" />-->
-          <img
-            v-for="(image,index) in images"
-            :key="index"
-            :src="'/storage/img/books/'+ image.url_image"
-            :alt="'urfridge.com |'+ book.title"
-          />
-        </carousel>
+        <carousel :images="images" :bookTitle="book.title"></carousel>
       </div>
       <div class="col-md-8">
         <h1>{{ book.title }}</h1>
@@ -44,26 +34,75 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="book-infos">
+        <div class="row">
+          <div class="col-md-3 info">
+            <div class="info-t">Language</div>
+            <font-awesome-icon class="icon" icon="language" />
+            <div class="info-v">{{ book.language }}</div>
+          </div>
+          <div class="col-md-3 info">
+            <div class="info-t">Print length</div>
+            <font-awesome-icon class="icon" icon="file" />
+            <div class="info-v">{{ book.number_pages }}</div>
+          </div>
+          <div class="col-md-3 info">
+            <div class="info-t">Publisher</div>
+            <font-awesome-icon class="icon" icon="building" />
+            <div class="info-v">{{ book.publisher }}</div>
+          </div>
+          <div class="col-md-3 info">
+            <div class="info-t">Publication date</div>
+            <font-awesome-icon class="icon" icon="calendar-alt" />
+            <div class="info-v">{{ book.publication_date }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ad-728-90></ad-728-90>
+    <div class="row">
+      <h2 class="h2-key">Keywords:</h2>
+      <div class="keyword" v-for="(kw,index) in keywords " :key="index">{{ kw.keyword }}</div>
+    </div>
+    <div class="row">
+      <h2 class="h2-key">More like this:</h2>
+      <div class="keyword" v-for="(book,index) in relatedBooks " :key="index">{{ book.title }}</div>
+    </div>
   </div>
 </template>
 
 <script>
 import Ad720_300 from '../ads/ad-720-300'
+import Ad728_90 from '../ads/ad-728-90'
 import SocialMedia from '../share-social-media'
-import Carousel from 'vue-owl-carousel'
+import Carousel from '../owl-carousel'
 
 export default {
   components: {
     'ad-720-300': Ad720_300,
+    'ad-728-90': Ad728_90,
     'share-social-media': SocialMedia,
-    Carousel
+    'carousel': Carousel,
   },
   data: function () {
     return {
       book: {},
       images: [],
+      keywords: [],
+      relatedBooks: [],
+      // urlKeywords: '',
       numberLoves: 0,
-      url: 'http://' + document.location.hostname + ':8000/api/book/',
+      url: 'http://' + document.location.hostname + ':8000/api/',
+    }
+  },
+  computed: {
+    urlKeywords: function () {
+      // let urlK = "";
+      // this.keywords.forEach(keyword => urlK += "k[]=" + keyword.id_keyword + "&");
+      // return urlK;
+      let item = this.keywords.find((item) => item.id_keyword == 1)
+      return item.keyword
     }
   },
   methods: {
@@ -76,7 +115,7 @@ export default {
     },
     getBook() {
       var id = this.getBookId();
-      axios.get(this.url + id)
+      axios.get(this.url + 'book/' + id)
         .then(response => {
           this.book = response.data
         })
@@ -86,7 +125,7 @@ export default {
     },
     getBookImages() {
       var id = this.getBookId();
-      axios.get(this.url + id + '/images')
+      axios.get(this.url + 'book/' + id + '/images')
         .then(response => {
           this.images = response.data
         })
@@ -94,22 +133,56 @@ export default {
           console.log(error);
         })
     },
+    getKeywords() {
+      var id = this.getBookId();
+      axios.get(this.url + 'book/' + id + '/keywords')
+        .then(response => {
+          this.keywords = response.data
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    },
     getNumberLoves() {
       var id = this.getBookId();
-      axios.get(this.url + id + '/loves')
+      axios.get(this.url + 'book/' + id + '/loves')
         .then(response => {
           this.numberLoves = response.data
         })
         .catch(error => {
           console.log(error);
         })
-    }
+    },
+    getRelatedBooks() {
+      console.log(this.urlKeywords);
+      // let urlK = "";
+      // urlK = this.keywords.join('&k[]=');
+      // console.log(urlK);
+      // for (let i = 0; i < this.$data.keywords.length; i++) {
+      //   // urlK += "k[]=" + this.keywords[i].id_keyword + "&";
+      //   console.log("0");
+      // }
+
+      // $.each(this.$data.keywords, function (value) {
+      //   urlK += "k[]=" + value.id_keyword + "&";
+      // });
+
+      // axios.get(this.url + 'books?' + urlK)
+      //   .then(response => {
+      //     this.relatedBooks = response.data
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   })
+    },
   },
   created() {
     this.getBook();
     this.getNumberLoves();
     this.getBookImages();
-  }
+    this.getKeywords();
+    this.getRelatedBooks();
+  },
 
 }
 </script>
@@ -169,5 +242,39 @@ export default {
 .book-img img {
   height: 500px;
   width: 100%;
+}
+.book-infos {
+  width: 75%;
+  height: 150px;
+  margin: 20px auto;
+  border: 1px solid #2c5d63;
+  border-radius: 20px;
+}
+.info {
+  text-align: center;
+  margin-top: 20px;
+}
+.icon {
+  font-size: 45px;
+  margin: 10px auto;
+}
+.info-v {
+  font-size: 20px;
+  font-weight: bold;
+}
+.keyword {
+  display: inline-block;
+  background-color: #283739;
+  color: white;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-top: 3px;
+  padding: 5px 10px;
+  border: 0.5px solid gray;
+  height: 35px;
+}
+.h2-key {
+  margin-right: 30px;
+  margin-left: 15px;
 }
 </style>

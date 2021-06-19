@@ -101,4 +101,12 @@ class BookController extends Controller
     public function getBookImages($id){
         return $this->bookRepository->getBookImagesById($id);
     }
+
+    public function getBookKeywords($id){
+        return $this->bookRepository->getBookKeywordsById($id);
+    }
+
+    public function getBooksByKeywords(Request $request){
+        return $this->bookRepository->getBooksByKeywords($request);
+    }
 }

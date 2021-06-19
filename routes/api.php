@@ -60,5 +60,9 @@ Route::get('/book/{id}',[BookController::class,'getBook']);
 Route::get('/book/{id}/loves',[BookController::class,'getBookLoves']);
 //get book images
 Route::get('/book/{id}/images',[BookController::class,'getBookImages']);
+//get book keywords
+Route::get('/book/{id}/keywords',[BookController::class,'getBookKeywords']);
+//get related books
+Route::get('/books',[BookController::class,'getBooksByKeywords']);
 
 
