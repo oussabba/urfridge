@@ -20,8 +20,22 @@ class BookRepository
         $this->book=$book;
     }
 
+    public function getAll(Request $request){
+        $limit = $request->l;
+        return Book::orderBy('id','DESC')
+        ->limit($limit)
+        ->get();
+    }
+
     public function getBookById($id){
         return Book::findOrFail($id);
+    }
+
+    public function getBookCover($id){
+        return DB::table('image_book')
+        ->where('id_book', $id)
+        ->where('is_cover', 1)
+        ->pluck('url_image');
     }
 
     public function getBookLovesById($id){
@@ -46,10 +60,7 @@ class BookRepository
         $keywords=$request->k;
         $books=array();
         $book = new stdClass();
-        $counter=0;
         foreach ($keywords as $key => $value) {
-            $counter++;
-            $bookExisted=false;
             $book=DB::table('books')
             ->join('book_keywords', 'book_keywords.id_book', '=', 'books.id')
             ->select('books.id','books.title')

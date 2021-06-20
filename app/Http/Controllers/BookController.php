@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\BookRepository;
+use \stdClass;
 
 class BookController extends Controller
 {
@@ -18,9 +19,17 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $books = $this->bookRepository->getAll($request);
+        //Add new item (image cover of the book) to object json (book)
+        $books = json_decode($books, TRUE);
+        for ($i=0; $i < count($books) ; $i++) {
+            $books[$i]["cover_url"] = $this->bookRepository->getBookCover($books[$i]["id"]);
+            $books[$i]["loves"] = $this->bookRepository->getBookLovesById($books[$i]["id"]);
+        }
+        // $books = json_encode($books);
+        return $books;
     }
 
     /**
@@ -96,6 +105,16 @@ class BookController extends Controller
     //get number of loves
     public function getBookLoves($id){
         return $this->bookRepository->getBookLovesById($id);
+    }
+
+    public function sortBooksByloves(Request $request){
+        $books = json_encode($this->index($request));
+        $books = json_decode($books, TRUE);
+        usort($books, function ($a, $b) {
+            if($a['loves']==$b['loves']) return 0;
+            return $a['loves'] < $b['loves']?1:-1;
+        });
+        return $books;
     }
 
     public function getBookImages($id){

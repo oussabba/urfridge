@@ -54,6 +54,9 @@ Route::get('/ingredients',[RecipeController::class,'getIndredients']);
 
 //books
 
+Route::get('/books/all',[BookController::class,'index']);
+//sorted books by loves
+Route::get('/books/sorted/loves',[BookController::class,'sortBooksByloves']);
 //get a book by id
 Route::get('/book/{id}',[BookController::class,'getBook']);
 //get number of loves of a book

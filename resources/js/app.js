@@ -10,6 +10,7 @@ import HomeMain from "./vue/components/main/home-main";
 import RecipeMain from "./vue/components/main/recipe-main";
 import BookMain from "./vue/components/main/book-main";
 import SearchMain from "./vue/components/main/search-main";
+import BooksMain from "./vue/components/main/books-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -69,6 +70,7 @@ const app = new Vue({
         HomeMain,
         RecipeMain,
         BookMain,
-        SearchMain
+        SearchMain,
+        BooksMain
     }
 });
