@@ -12,10 +12,16 @@
       <h4>Book's title:</h4>
       <div class="row">
         <div class="col-9">
-          <input type="text" name="book-title" id="book-title" class="form-control" />
+          <input
+            type="text"
+            name="book-title"
+            id="book-title"
+            class="form-control"
+            v-model="bookProposal"
+          />
         </div>
         <div class="col-3">
-          <div class="submit-btn">Submit</div>
+          <div class="submit-btn" @click="insertBookProposal">Submit</div>
         </div>
       </div>
     </div>
@@ -23,9 +29,24 @@
 </template>
 <script>
 export default {
+  data: function () {
+    return {
+      bookProposal: '',
+      url: 'http://' + document.location.hostname + ':8000/api/book-proposal?title='
+    }
+  },
   methods: {
     showProposalBox() {
       document.getElementById("proposal-box").style.display = 'block';
+    },
+    insertBookProposal() {
+      axios.post(this.url + this.bookProposal)
+        .then(response => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.log(error);
+        })
     }
   }
 }

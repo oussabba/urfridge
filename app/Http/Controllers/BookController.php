@@ -128,4 +128,8 @@ class BookController extends Controller
     public function getBooksByKeywords(Request $request){
         return $this->bookRepository->getBooksByKeywords($request);
     }
+
+    public function addBookProposal(Request $request){
+        return $this->bookRepository->storeProposal($request);
+    }
 }

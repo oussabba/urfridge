@@ -139,4 +139,51 @@ class RecipeRepository
 
         return "Recipe not found";
     }
+
+    public function getSortedRecipesByDate(){
+        return DB::table('recipes')
+            ->join('love_recipe', 'love_recipe.id_recipe', '=', 'recipes.id')
+            ->select('recipes.*',DB::raw("COUNT(love_recipe.id_recipe) AS number_loves"))
+            ->orderByDesc('recipes.id')
+            ->groupBy('recipes.id')
+            ->get();
+    }
+
+    public function getSortedRecipesByLoves(){
+        return DB::table('recipes')
+            ->join('love_recipe', 'love_recipe.id_recipe', '=', 'recipes.id')
+            ->select('recipes.*',DB::raw("COUNT(love_recipe.id_recipe) AS number_loves"))
+            ->orderByDesc('number_loves')
+            ->groupBy('recipes.id')
+            ->get();
+    }
+
+    public function getSortedRecipesByTime(){
+        return DB::table('recipes')
+            ->join('love_recipe', 'love_recipe.id_recipe', '=', 'recipes.id')
+            ->select('recipes.*',DB::raw("COUNT(love_recipe.id_recipe) AS number_loves"))
+            ->orderBy('recipes.total_time', 'asc')
+            ->groupBy('recipes.id')
+            ->get();
+    }
+
+    public function getSortedRecipesByIngredients(){
+        return DB::table('recipes')
+            ->join('love_recipe', 'love_recipe.id_recipe', '=', 'recipes.id')
+            ->select('recipes.*',DB::raw("COUNT(love_recipe.id_recipe) AS number_loves"))
+            ->orderBy('recipes.nmbre_ingredients', 'asc')
+            ->groupBy('recipes.id')
+            ->get();
+    }
+
+    public function getRoyalRecipes($request){
+        $limit = $request->l;
+        return DB::table('recipes')
+        ->join('love_recipe', 'love_recipe.id_recipe', '=', 'recipes.id')
+        ->select('recipes.*',DB::raw("COUNT(love_recipe.id_recipe) AS number_loves"))
+        ->where('isRoyal', 1)
+        ->groupBy('recipes.id')
+        ->limit($limit)
+        ->get();
+    }
 }

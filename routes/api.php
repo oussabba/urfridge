@@ -25,6 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 //recipes
 Route::get('/recipes',[RecipeController::class,'index']);
+Route::get('/recipes/all',[RecipeController::class,'getSortedRecipes']);
 Route::get('/recipes/{number}',[RecipeController::class,'getLimitedNumberOfRecipes']);
 Route::get('/sortedRecipes/{number}',[RecipeController::class,'sortRecipesByloves']);
 Route::prefix('/recipe')->group( Function(){
@@ -51,6 +52,8 @@ Route::get('/diets',[RecipeController::class,'getDiets']);
 Route::get('/ing-categories',[RecipeController::class,'getCategories']);
 //get ingredients by categorie
 Route::get('/ingredients',[RecipeController::class,'getIndredients']);
+//get royal recipes
+Route::get('/royal-recipes',[RecipeController::class,'getRoyalRecipes']);
 
 //books
 
@@ -67,5 +70,8 @@ Route::get('/book/{id}/images',[BookController::class,'getBookImages']);
 Route::get('/book/{id}/keywords',[BookController::class,'getBookKeywords']);
 //get related books
 Route::get('/books',[BookController::class,'getBooksByKeywords']);
+
+//add book proposal
+Route::post('/book-proposal',[BookController::class,'addBookProposal']);
 
 

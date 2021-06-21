@@ -81,4 +81,15 @@ class BookRepository
         }
         return $books;
     }
+    public function storeProposal($request){
+        $bookTitle = $request->title;
+        $inserted = DB::table('books_proposal')->insert([
+        'book_title' => $bookTitle,
+        ]);
+        if ($inserted == 1) {
+            return "Book proposal added with success.";
+        }else{
+            return "failed!";
+        }
+    }
 }

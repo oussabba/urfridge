@@ -97,7 +97,7 @@ body {
   padding: 10px;
 }
 .social-media-fixed a {
-  color: #a2c11c;
+  color: #a2c11c !important;
 }
 
 .centred-h1 {

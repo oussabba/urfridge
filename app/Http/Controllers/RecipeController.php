@@ -39,6 +39,28 @@ class RecipeController extends Controller
         return $recipes;
     }
 
+    public function getSortedRecipes(Request $request){
+        $sort = $request->sort;
+        switch ($sort) {
+            case 'date':
+                return $this->recipeRepository->getSortedRecipesByDate();
+                break;
+            case 'loves':
+                return $this->recipeRepository->getSortedRecipesByLoves();
+                break;
+            case 'time':
+                return $this->recipeRepository->getSortedRecipesByTime();
+                break;
+            case 'ingredients':
+                return $this->recipeRepository->getSortedRecipesByIngredients();
+                break;
+            
+            default:
+                return $this->recipeRepository->getSortedRecipesByDate();
+                break;
+        }
+    }
+
     //get number of loves
     public function getRecipeLoves($id){
         return $this->recipeRepository->getNumberLoves($id);
@@ -147,5 +169,9 @@ class RecipeController extends Controller
 
     public function getIndredients(Request $request){
         return $this->recipeRepository->getIngredientsByCategorie($request);
+    }
+
+    public function getRoyalRecipes(Request $request){
+        return $this->recipeRepository->getRoyalRecipes($request);
     }
 }

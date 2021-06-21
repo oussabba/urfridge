@@ -11,6 +11,8 @@ import RecipeMain from "./vue/components/main/recipe-main";
 import BookMain from "./vue/components/main/book-main";
 import SearchMain from "./vue/components/main/search-main";
 import BooksMain from "./vue/components/main/books-main";
+import RecipesMain from "./vue/components/main/recipes-main";
+import ExploreMain from "./vue/components/main/explore-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -71,6 +73,8 @@ const app = new Vue({
         RecipeMain,
         BookMain,
         SearchMain,
-        BooksMain
+        BooksMain,
+        RecipesMain,
+        ExploreMain
     }
 });
