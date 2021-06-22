@@ -8,7 +8,7 @@
         <form action="#" method="POST">
           <div class="row margin-tp-10">
             <div class="col-12 col-md-4">
-              <label for="user">Username/Email :</label>
+              <label for="user">Email :</label>
             </div>
             <div class="col-12 col-md-8">
               <input
@@ -16,6 +16,7 @@
                 name="user"
                 id="user"
                 class="form-control form-input"
+                v-model="email"
               />
             </div>
           </div>
@@ -29,20 +30,17 @@
                 name="password"
                 id="password"
                 class="form-control form-input"
+                v-model="password"
               />
             </div>
           </div>
           <div class="row">
-            <input
-              type="submit"
-              value="Sign in"
-              name="submit"
-              class="submit-btn"
-            />
+            <input type="submit" value="Sign in" name="submit" class="submit-btn" />
           </div>
           <div class="row">
             <p class="form-sentence">
-              You don't have an account yet ? <a href="signup">Register NOW</a>
+              You don't have an account yet ?
+              <a href="signup">Register NOW</a>
             </p>
           </div>
         </form>
@@ -51,10 +49,7 @@
           <div class="col-12 col-md-6">
             <a href="#">
               <div class="google-auth">
-                <img
-                  src="\assets\img\google-logo.png"
-                  alt="urfridge.com | Logo google png"
-                />
+                <img src="\assets\img\google-logo.png" alt="urfridge.com | Logo google png" />
                 Sign in with Google
               </div>
             </a>
@@ -71,6 +66,11 @@
 </template>
 <script>
 export default {
-  setup() {},
+  data: function () {
+    return {
+      email: '',
+      password: '',
+    }
+  }
 };
 </script>

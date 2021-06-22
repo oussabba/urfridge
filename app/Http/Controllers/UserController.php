@@ -6,9 +6,17 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use App\Repositories\UserRepository;
 
 class UserController extends Controller
 {
+    protected $userRepository;
+
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository=$userRepository;
+    }
+
     public function register(Request $request){
 
         $fields = $request->validate([
@@ -71,4 +79,17 @@ class UserController extends Controller
             'message' => 'logged out'
         ];
     }
+
+    public function getUser($id){
+        return $this->userRepository->getUserById($id);
+    }
+
+    public function getSavedRecipes($id){
+        return $this->userRepository->getSavedRecipes($id);
+    }
+
+    public function getLovedRecipes($id){
+        return $this->userRepository->getLovedRecipes($id);
+    }
+    
 }

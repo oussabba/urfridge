@@ -62,7 +62,7 @@ Route::get('/books/all',[BookController::class,'index']);
 //sorted books by loves
 Route::get('/books/sorted/loves',[BookController::class,'sortBooksByloves']);
 //get a book by id
-// Route::get('/book/{id}',[BookController::class,'getBook']);
+Route::get('/book/{id}',[BookController::class,'getBook']);
 //get number of loves of a book
 Route::get('/book/{id}/loves',[BookController::class,'getBookLoves']);
 //get book images
@@ -79,12 +79,16 @@ Route::post('/book-proposal',[BookController::class,'addBookProposal']);
 Route::post('/register',[UserController::class,'register']);
 //login a user
 Route::post('/login',[UserController::class,'login']);
+//saved recipes by a user
+Route::get('/user/{id}/recipes/saved',[UserController::class,'getSavedRecipes']);
+//loved recipes by a user
+Route::get('/user/{id}/recipes/loved',[UserController::class,'getLovedRecipes']);
 
+//get user [tmp]
+Route::get('/user/{id}',[UserController::class,'getUser']);
 
 //****Protected routes*****
 Route::group(['middleware' => ['auth:sanctum']],function(){
-    Route::get('/book/{id}',[BookController::class,'getBook']);
-
     Route::post('/logout',[UserController::class,'logout']);
 });
 

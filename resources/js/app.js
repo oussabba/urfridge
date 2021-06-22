@@ -13,6 +13,7 @@ import SearchMain from "./vue/components/main/search-main";
 import BooksMain from "./vue/components/main/books-main";
 import RecipesMain from "./vue/components/main/recipes-main";
 import ExploreMain from "./vue/components/main/explore-main";
+import DashboardMain from "./vue/components/main/dashboard-main";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -25,6 +26,7 @@ import {
     faUserPlus,
     faHeart,
     faPlus,
+    faMinus,
     faLanguage,
     faFile,
     faBuilding,
@@ -54,6 +56,7 @@ library.add(
     faPinterestSquare,
     faYoutubeSquare,
     faPlus,
+    faMinus,
     faLanguage,
     faFile,
     faBuilding,
@@ -75,6 +78,7 @@ const app = new Vue({
         SearchMain,
         BooksMain,
         RecipesMain,
-        ExploreMain
+        ExploreMain,
+        'dashboard-main':DashboardMain
     }
 });

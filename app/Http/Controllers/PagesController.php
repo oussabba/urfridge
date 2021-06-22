@@ -48,4 +48,8 @@ class PagesController extends Controller
     public function bookPage(){
         return view('book');
     }
+
+    public function dashboardPage(){
+        return view('dashboard');
+    }
 }

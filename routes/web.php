@@ -25,4 +25,8 @@ Route::get('/signup', [PagesController::class, 'signupPage']);
 Route::get('/recipe/{id}/{title}', [PagesController::class, 'recipePage'])->whereNumber('id')->whereAlpha('title');
 Route::get('/book/{id}/{title}', [PagesController::class, 'bookPage'])->whereNumber('id')->whereAlpha('title');
 
+//*** TMP****
+Route::get('/dashboard/{id}', [PagesController::class, 'dashboardPage'])->whereNumber('id');
+
+
 
