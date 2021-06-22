@@ -15590,6 +15590,118 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ads_ad_720_300__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ads/ad-720-300 */ "./resources/js/vue/components/ads/ad-720-300.vue");
+/* harmony import */ var _ads_ad_728_90__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ads/ad-728-90 */ "./resources/js/vue/components/ads/ad-728-90.vue");
+/* harmony import */ var _ads_ad_300_600__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ads/ad-300-600 */ "./resources/js/vue/components/ads/ad-300-600.vue");
+/* harmony import */ var _recipe_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../recipe-card */ "./resources/js/vue/components/recipe-card.vue");
+/* harmony import */ var _royal_recipe_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../royal-recipe-card */ "./resources/js/vue/components/royal-recipe-card.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    'ad-720-300': _ads_ad_720_300__WEBPACK_IMPORTED_MODULE_0__.default,
+    'ad-728-90': _ads_ad_728_90__WEBPACK_IMPORTED_MODULE_1__.default,
+    'ad-300-600': _ads_ad_300_600__WEBPACK_IMPORTED_MODULE_2__.default,
+    'recipe-card': _recipe_card__WEBPACK_IMPORTED_MODULE_3__.default,
+    'royal-recipe-card': _royal_recipe_card__WEBPACK_IMPORTED_MODULE_4__.default
+  },
+  data: function data() {
+    return {
+      lastAddedRecipes: [],
+      mostLovedRecipes: [],
+      royalRecipes: [],
+      lastAddedUrl: 'http://' + document.location.hostname + ':8000/api/recipes/6',
+      mostLovedUrl: 'http://' + document.location.hostname + ':8000/api/sortedRecipes/6',
+      royalUrl: 'http://' + document.location.hostname + ':8000/api/royal-recipes?l=8'
+    };
+  },
+  methods: {
+    getLastAddedRecipes: function getLastAddedRecipes() {
+      var _this = this;
+
+      axios.get(this.lastAddedUrl).then(function (response) {
+        _this.lastAddedRecipes = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    getMostLovedRecipes: function getMostLovedRecipes() {
+      var _this2 = this;
+
+      axios.get(this.mostLovedUrl).then(function (response) {
+        _this2.mostLovedRecipes = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    getRoyalRecipes: function getRoyalRecipes() {
+      var _this3 = this;
+
+      axios.get(this.royalUrl).then(function (response) {
+        _this3.royalRecipes = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  created: function created() {
+    this.getLastAddedRecipes();
+    this.getMostLovedRecipes();
+    this.getRoyalRecipes();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/home-main.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/home-main.vue?vue&type=script&lang=js& ***!
@@ -15709,6 +15821,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _ads_ad_720_300__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ads/ad-720-300 */ "./resources/js/vue/components/ads/ad-720-300.vue");
+/* harmony import */ var _ads_ad_728_90__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ads/ad-728-90 */ "./resources/js/vue/components/ads/ad-728-90.vue");
+//
+//
+//
 //
 //
 //
@@ -15774,9 +15890,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    'ad-720-300': _ads_ad_720_300__WEBPACK_IMPORTED_MODULE_0__.default
+    'ad-720-300': _ads_ad_720_300__WEBPACK_IMPORTED_MODULE_0__.default,
+    'ad-728-90': _ads_ad_728_90__WEBPACK_IMPORTED_MODULE_1__.default
   },
   data: function data() {
     return {
@@ -15796,11 +15914,6 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
-    }
-  },
-  filters: {
-    subStr: function subStr(string) {
-      return string.substring(0, 300) + '...';
     },
     seoFriendlyTitle: function seoFriendlyTitle(title) {
       return title.toString() // Convert to string
@@ -15812,7 +15925,12 @@ __webpack_require__.r(__webpack_exports__);
       .replace(/[^a-z0-9\-]/g, '') // Remove anything that is not a letter, number or dash
       .replace(/-+/g, '-') // Remove duplicate dashes
       .replace(/^-*/, '') // Remove starting dashes
-      .replace(/-*$/, ''); // Remove trailing dashes
+      .replace(/-*$/, '');
+    }
+  },
+  filters: {
+    subStr: function subStr(string) {
+      return string.substring(0, 300) + '...';
     }
   }
 });
@@ -16445,6 +16563,43 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["recipe"],
+  data: function data() {
+    return {// defaultSaveRecipeText: '&#43;',
+      // saveRecipeText: ''
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/search-by-ingredient.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/search-by-ingredient.vue?vue&type=script&lang=js& ***!
@@ -16897,7 +17052,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _vue_components_navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vue/components/navbar */ "./resources/js/vue/components/navbar.vue");
 /* harmony import */ var _vue_components_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vue/components/footer */ "./resources/js/vue/components/footer.vue");
 /* harmony import */ var _vue_components_social_media_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vue/components/social-media-bar */ "./resources/js/vue/components/social-media-bar.vue");
@@ -16909,10 +17064,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vue_components_main_search_main__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./vue/components/main/search-main */ "./resources/js/vue/components/main/search-main.vue");
 /* harmony import */ var _vue_components_main_books_main__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./vue/components/main/books-main */ "./resources/js/vue/components/main/books-main.vue");
 /* harmony import */ var _vue_components_main_recipes_main__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./vue/components/main/recipes-main */ "./resources/js/vue/components/main/recipes-main.vue");
-/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.es.js");
-/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
+/* harmony import */ var _vue_components_main_explore_main__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./vue/components/main/explore-main */ "./resources/js/vue/components/main/explore-main.vue");
+/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -16931,9 +17087,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_11__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faHome, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faSearch, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faCompass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faDrumstickBite, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faBook, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faSignInAlt, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faUserPlus, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faHeart, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faFacebookSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faInstagramSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faTwitterSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faPinterestSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faYoutubeSquare, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faPlus, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faLanguage, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faFile, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faBuilding, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_13__.faCalendarAlt);
-vue__WEBPACK_IMPORTED_MODULE_15__.default.component("font-awesome-icon", _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_12__.FontAwesomeIcon);
-var app = new vue__WEBPACK_IMPORTED_MODULE_15__.default({
+
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_12__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faHome, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faSearch, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faCompass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faDrumstickBite, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faBook, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faSignInAlt, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faUserPlus, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faHeart, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_15__.faFacebookSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_15__.faInstagramSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_15__.faTwitterSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_15__.faPinterestSquare, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_15__.faYoutubeSquare, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faPlus, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faLanguage, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faFile, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faBuilding, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__.faCalendarAlt);
+vue__WEBPACK_IMPORTED_MODULE_16__.default.component("font-awesome-icon", _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_13__.FontAwesomeIcon);
+var app = new vue__WEBPACK_IMPORTED_MODULE_16__.default({
   el: "#app",
   components: {
     Navbar: _vue_components_navbar__WEBPACK_IMPORTED_MODULE_0__.default,
@@ -16946,7 +17103,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_15__.default({
     BookMain: _vue_components_main_book_main__WEBPACK_IMPORTED_MODULE_7__.default,
     SearchMain: _vue_components_main_search_main__WEBPACK_IMPORTED_MODULE_8__.default,
     BooksMain: _vue_components_main_books_main__WEBPACK_IMPORTED_MODULE_9__.default,
-    RecipesMain: _vue_components_main_recipes_main__WEBPACK_IMPORTED_MODULE_10__.default
+    RecipesMain: _vue_components_main_recipes_main__WEBPACK_IMPORTED_MODULE_10__.default,
+    ExploreMain: _vue_components_main_explore_main__WEBPACK_IMPORTED_MODULE_11__.default
   }
 });
 
@@ -17199,6 +17357,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.mg-tp-40[data-v-d575bdee] {\r\n  ma
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.see-more-royal-btn[data-v-56202277] {\r\n  background-color: #2c5d63;\r\n  color: white;\r\n  border-radius: 30px;\r\n  height: 50px;\r\n  width: 200px;\r\n  margin: 30px auto;\r\n  font-size: 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/recipes-main.vue?vue&type=style&index=0&id=a0e816b6&scoped=true&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/recipes-main.vue?vue&type=style&index=0&id=a0e816b6&scoped=true&lang=css& ***!
@@ -17216,7 +17398,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sort[data-v-a0e816b6] {\r\n  border-radius: 15px;\r\n  margin-left: 15px;\r\n  width: 200px;\r\n  margin-top: -7px;\n}\n.recipe[data-v-a0e816b6] {\r\n  margin-top: 15px;\r\n  border-radius: 15px;\r\n  width: 100%;\n}\n.recipe-body[data-v-a0e816b6] {\r\n  background-color: white;\r\n  width: 100%;\r\n  height: 280px;\r\n  padding: 20px;\r\n  border-radius: 0 20px 20px 0;\n}\nimg[data-v-a0e816b6] {\r\n  width: 100%;\r\n  height: 280px;\r\n  border-radius: 20px 0 0 20px;\n}\n.loved-btn[data-v-a0e816b6] {\r\n  color: gray;\r\n  font-size: 27px;\r\n  text-shadow: 2px 2px #ff0000;\r\n  cursor: pointer;\n}\n.loved-btn[data-v-a0e816b6]:hover {\r\n  color: red;\n}\n.img-recipe[data-v-a0e816b6] {\r\n  padding: 0px;\n}\n.recipe-footer[data-v-a0e816b6] {\r\n  text-align: center;\r\n  font-size: 18px;\r\n  margin-top: 150px;\n}\n.checkout-btn[data-v-a0e816b6] {\r\n  background-color: #2c5d63;\r\n  color: white;\r\n  height: 40px;\r\n  width: 150px;\r\n  margin: 0px auto;\r\n  border-radius: 30px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\n.heart[data-v-a0e816b6] {\r\n  color: red;\n}\n.loves[data-v-a0e816b6] {\r\n  padding-top: 10px;\n}\na[data-v-a0e816b6] {\r\n  text-decoration: none;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sort[data-v-a0e816b6] {\r\n  border-radius: 15px;\r\n  margin-left: 15px;\r\n  width: 200px;\r\n  margin-top: -7px;\n}\n.recipe[data-v-a0e816b6] {\r\n  margin-top: 15px;\r\n  border-radius: 15px;\r\n  width: 100%;\n}\n.recipe-body[data-v-a0e816b6] {\r\n  background-color: white;\r\n  width: 100%;\r\n  height: 280px;\r\n  padding: 20px;\r\n  border-radius: 0 20px 20px 0;\n}\nimg[data-v-a0e816b6] {\r\n  width: 100%;\r\n  height: 280px;\r\n  border-radius: 20px 0 0 20px;\n}\n.loved-btn[data-v-a0e816b6] {\r\n  color: gray;\r\n  font-size: 27px;\r\n  text-shadow: 2px 2px #ff0000;\r\n  cursor: pointer;\n}\n.loved-btn[data-v-a0e816b6]:hover {\r\n  color: red;\n}\n.img-recipe[data-v-a0e816b6] {\r\n  padding: 0px;\n}\n.recipe-footer[data-v-a0e816b6] {\r\n  text-align: center;\r\n  font-size: 18px;\r\n  margin-top: 150px;\n}\n.checkout-btn[data-v-a0e816b6] {\r\n  background-color: #2c5d63;\r\n  color: white;\r\n  height: 40px;\r\n  width: 150px;\r\n  margin: 0px auto;\r\n  border-radius: 30px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\n.heart[data-v-a0e816b6] {\r\n  color: red;\n}\n.loves[data-v-a0e816b6] {\r\n  padding-top: 10px;\n}\na[data-v-a0e816b6] {\r\n  text-decoration: none;\r\n  color: #283739;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17457,6 +17639,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".recipe-card[data-v-6503a69d] {\n  margin-top: 20px;\n  border: #707070 solid 0.5px;\n}\n.recipe-card-body[data-v-6503a69d] {\n  background-color: #ffffff;\n  padding: 10px;\n}\n.recipe-card-body[data-v-6503a69d] {\n  width: 100%;\n}\n.recipe-card-img[data-v-6503a69d] {\n  height: 220px;\n}\nimg[data-v-6503a69d] {\n  width: 100%;\n  height: 100%;\n}\nh4[data-v-6503a69d] {\n  text-align: center;\n}\n.loved-by[data-v-6503a69d] {\n  font-size: 18px;\n  text-align: center;\n}\n.loved-btn[data-v-6503a69d] {\n  color: white;\n  font-size: 27px;\n  position: absolute;\n  left: 7%;\n  top: 7%;\n  text-shadow: 2px 2px #ff0000;\n  cursor: pointer;\n}\n.loved-btn[data-v-6503a69d]:hover {\n  color: red;\n}\n.save-recipe-btn[data-v-6503a69d] {\n  background-color: #ffffff;\n  border-radius: 10px;\n  position: absolute;\n  right: 7%;\n  top: 7%;\n  height: 30px;\n  width: 30px;\n  font-size: 12px;\n  padding: 7px 10px;\n  cursor: pointer;\n}\n.save-text[data-v-6503a69d] {\n  display: none;\n}\n.save-recipe-btn[data-v-6503a69d]:hover {\n  background-color: #ffffff;\n  border-radius: 15px;\n  position: absolute;\n  right: 7%;\n  top: 7%;\n  height: 30px;\n  width: 100px;\n  font-size: 14px;\n  text-align: center;\n  padding-top: 5px;\n}\n.save-recipe-btn:hover .save-text[data-v-6503a69d] {\n  display: inline;\n}\n.save-recipe-btn:hover .plus-icon[data-v-6503a69d] {\n  display: none;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".recipe-card[data-v-758def57] {\n  margin-top: 20px;\n  border: #707070 solid 0.5px;\n}\n.recipe-card-body[data-v-758def57] {\n  background-color: #283739;\n  padding: 10px;\n  width: 100%;\n  color: white;\n  min-height: 150px;\n}\n.recipe-card-img[data-v-758def57] {\n  height: 220px;\n}\nimg[data-v-758def57] {\n  width: 100%;\n  height: 100%;\n}\nh4[data-v-758def57] {\n  text-align: center;\n}\n.loved-by[data-v-758def57] {\n  font-size: 18px;\n  position: absolute;\n  bottom: 0px;\n  left: 50%;\n  transform: translate(-50%, 0);\n}\n.loved-btn[data-v-758def57] {\n  color: white;\n  font-size: 27px;\n  position: absolute;\n  left: 7%;\n  top: 7%;\n  text-shadow: 2px 2px #ff0000;\n  cursor: pointer;\n}\n.loved-btn[data-v-758def57]:hover {\n  color: red;\n}\n.crown[data-v-758def57] {\n  position: absolute;\n  right: -5px;\n  top: -10px;\n  width: 60px;\n  height: 60px;\n  transform: rotate(20deg);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35371,6 +35577,47 @@ component.options.__file = "resources/js/vue/components/main/books-main.vue"
 
 /***/ }),
 
+/***/ "./resources/js/vue/components/main/explore-main.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/vue/components/main/explore-main.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _explore_main_vue_vue_type_template_id_56202277_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-main.vue?vue&type=template&id=56202277&scoped=true& */ "./resources/js/vue/components/main/explore-main.vue?vue&type=template&id=56202277&scoped=true&");
+/* harmony import */ var _explore_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-main.vue?vue&type=script&lang=js& */ "./resources/js/vue/components/main/explore-main.vue?vue&type=script&lang=js&");
+/* harmony import */ var _explore_main_vue_vue_type_style_index_0_id_56202277_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css& */ "./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
+  _explore_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _explore_main_vue_vue_type_template_id_56202277_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _explore_main_vue_vue_type_template_id_56202277_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "56202277",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/vue/components/main/explore-main.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/vue/components/main/home-main.vue":
 /*!********************************************************!*\
   !*** ./resources/js/vue/components/main/home-main.vue ***!
@@ -35896,6 +36143,47 @@ component.options.__file = "resources/js/vue/components/recipe-infos.vue"
 
 /***/ }),
 
+/***/ "./resources/js/vue/components/royal-recipe-card.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/vue/components/royal-recipe-card.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _royal_recipe_card_vue_vue_type_template_id_758def57_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true& */ "./resources/js/vue/components/royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true&");
+/* harmony import */ var _royal_recipe_card_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./royal-recipe-card.vue?vue&type=script&lang=js& */ "./resources/js/vue/components/royal-recipe-card.vue?vue&type=script&lang=js&");
+/* harmony import */ var _royal_recipe_card_vue_vue_type_style_index_0_id_758def57_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true& */ "./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
+  _royal_recipe_card_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _royal_recipe_card_vue_vue_type_template_id_758def57_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _royal_recipe_card_vue_vue_type_template_id_758def57_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "758def57",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/vue/components/royal-recipe-card.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/vue/components/search-by-ingredient.vue":
 /*!**************************************************************!*\
   !*** ./resources/js/vue/components/search-by-ingredient.vue ***!
@@ -36228,6 +36516,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/vue/components/main/explore-main.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/vue/components/main/explore-main.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./explore-main.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/vue/components/main/home-main.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************!*\
   !*** ./resources/js/vue/components/main/home-main.vue?vue&type=script&lang=js& ***!
@@ -36433,6 +36737,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_infos_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./recipe-infos.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/recipe-infos.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_infos_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/vue/components/royal-recipe-card.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/vue/components/royal-recipe-card.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./royal-recipe-card.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -36686,6 +37006,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/vue/components/main/explore-main.vue?vue&type=template&id=56202277&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/vue/components/main/explore-main.vue?vue&type=template&id=56202277&scoped=true& ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_template_id_56202277_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_template_id_56202277_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_template_id_56202277_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./explore-main.vue?vue&type=template&id=56202277&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=template&id=56202277&scoped=true&");
+
+
+/***/ }),
+
 /***/ "./resources/js/vue/components/main/home-main.vue?vue&type=template&id=48d53bd3&scoped=true&":
 /*!***************************************************************************************************!*\
   !*** ./resources/js/vue/components/main/home-main.vue?vue&type=template&id=48d53bd3&scoped=true& ***!
@@ -36903,6 +37240,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_infos_vue_vue_type_template_id_d1bd9170_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_infos_vue_vue_type_template_id_d1bd9170_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./recipe-infos.vue?vue&type=template&id=d1bd9170&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/recipe-infos.vue?vue&type=template&id=d1bd9170&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/vue/components/royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/vue/components/royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true& ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_template_id_758def57_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_template_id_758def57_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_template_id_758def57_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true&");
 
 
 /***/ }),
@@ -37162,6 +37516,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css& ***!
+  \********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_style_index_0_id_56202277_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-style-loader/index.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_style_index_0_id_56202277_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_style_index_0_id_56202277_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_style_index_0_id_56202277_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_explore_main_vue_vue_type_style_index_0_id_56202277_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+
+
+/***/ }),
+
 /***/ "./resources/js/vue/components/main/recipes-main.vue?vue&type=style&index=0&id=a0e816b6&scoped=true&lang=css&":
 /*!********************************************************************************************************************!*\
   !*** ./resources/js/vue/components/main/recipes-main.vue?vue&type=style&index=0&id=a0e816b6&scoped=true&lang=css& ***!
@@ -37344,6 +37715,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_card_vue_vue_type_style_index_0_id_6503a69d_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_card_vue_vue_type_style_index_0_id_6503a69d_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
 /* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_card_vue_vue_type_style_index_0_id_6503a69d_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_recipe_card_vue_vue_type_style_index_0_id_6503a69d_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+
+
+/***/ }),
+
+/***/ "./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true&":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_style_index_0_id_758def57_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-style-loader/index.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!../../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_style_index_0_id_758def57_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_style_index_0_id_758def57_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_style_index_0_id_758def57_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_13_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_royal_recipe_card_vue_vue_type_style_index_0_id_758def57_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 
 
@@ -38058,6 +38446,109 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=template&id=56202277&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=template&id=56202277&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("ad-720-300"),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Last added recipes:")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.lastAddedRecipes, function(recipe, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "col-md-4" },
+            [_c("recipe-card", { attrs: { recipe: recipe } })],
+            1
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("ad-728-90"),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Most loved recipes:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-7" }, [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.mostLovedRecipes, function(recipe, index) {
+              return _c(
+                "div",
+                { key: index, staticClass: "col-md-6" },
+                [_c("recipe-card", { attrs: { recipe: recipe } })],
+                1
+              )
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [_c("ad-300-600")], 1)
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Royal recipes:")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.royalRecipes, function(recipe, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "col-md-3" },
+            [_c("royal-recipe-card", { attrs: { recipe: recipe } })],
+            1
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "see-more-royal-btn" }, [
+        _vm._v("See more 👑 recipes")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/home-main.vue?vue&type=template&id=48d53bd3&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/home-main.vue?vue&type=template&id=48d53bd3&scoped=true& ***!
@@ -38221,96 +38712,119 @@ var render = function() {
         "div",
         { staticClass: "row" },
         _vm._l(_vm.recipes, function(recipe, index) {
-          return _c("div", { key: index, staticClass: "recipe col-12" }, [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href:
-                    _vm.hostName +
-                    recipe.id +
-                    "/" +
-                    (recipe.title | _vm.seoFriendlyTitle)
-                }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-4 img-recipe" }, [
-                    _c("img", {
-                      attrs: {
-                        src: "/storage/img/recipes/" + recipe.image_url,
-                        alt: "urfridge.com | " + recipe.title
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "recipe-body col-md-8" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-11" }, [
-                        _c("h4", [_vm._v(_vm._s(recipe.title))])
-                      ]),
-                      _vm._v(" "),
+          return _c(
+            "div",
+            { key: index, staticClass: "recipe col-12" },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4 img-recipe" }, [
+                  _c("img", {
+                    attrs: {
+                      src: "/storage/img/recipes/" + recipe.image_url,
+                      alt: "urfridge.com | " + recipe.title
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "recipe-body col-md-8" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-11" }, [
                       _c(
-                        "div",
-                        { staticClass: "col-1" },
-                        [
-                          _c("font-awesome-icon", {
-                            staticClass: "loved-btn",
-                            attrs: { icon: "heart" }
-                          })
-                        ],
-                        1
+                        "a",
+                        {
+                          attrs: {
+                            href:
+                              _vm.hostName +
+                              recipe.id +
+                              "/" +
+                              _vm.seoFriendlyTitle(recipe.title)
+                          }
+                        },
+                        [_c("h4", [_vm._v(_vm._s(recipe.title))])]
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "recipe-desc" }, [
-                      _vm._v(_vm._s(_vm._f("subStr")(recipe.description)))
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "recipe-footer" }, [
-                      _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-1" },
+                      [
+                        _c("font-awesome-icon", {
+                          staticClass: "loved-btn",
+                          attrs: { icon: "heart" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "recipe-desc" }, [
+                    _vm._v(_vm._s(_vm._f("subStr")(recipe.description)))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "recipe-footer" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-3 loves" },
+                        [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(recipe.number_loves) +
+                              " \n                "
+                          ),
+                          _c("font-awesome-icon", {
+                            staticClass: "heart",
+                            attrs: { icon: "heart" }
+                          }),
+                          _vm._v(" this\n              ")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-3 loves" }, [
+                        _vm._v(
+                          "\n                Total time:  \n                " +
+                            _vm._s(recipe.total_time) +
+                            " min\n              "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-3 loves" }, [
+                        _vm._v(
+                          "\n                Ingredients:  \n                " +
+                            _vm._s(recipe.nmbre_ingredients) +
+                            "\n              "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-3" }, [
                         _c(
-                          "div",
-                          { staticClass: "col-3 loves" },
+                          "a",
+                          {
+                            attrs: {
+                              href:
+                                _vm.hostName +
+                                recipe.id +
+                                "/" +
+                                _vm.seoFriendlyTitle(recipe.title)
+                            }
+                          },
                           [
-                            _vm._v(
-                              "\n                  " +
-                                _vm._s(recipe.number_loves) +
-                                " \n                  "
-                            ),
-                            _c("font-awesome-icon", {
-                              staticClass: "heart",
-                              attrs: { icon: "heart" }
-                            }),
-                            _vm._v(" this\n                ")
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3 loves" }, [
-                          _vm._v(
-                            "\n                  Total time:  \n                  " +
-                              _vm._s(recipe.total_time) +
-                              " min\n                "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-3 loves" }, [
-                          _vm._v(
-                            "\n                  Ingredients:  \n                  " +
-                              _vm._s(recipe.nmbre_ingredients) +
-                              "\n                "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(0, true)
+                            _c("div", { staticClass: "checkout-btn" }, [
+                              _vm._v("Check out")
+                            ])
+                          ]
+                        )
                       ])
                     ])
                   ])
                 ])
-              ]
-            )
-          ])
+              ]),
+              _vm._v(" "),
+              index % 2 == 0 && index != 0 ? _c("ad-728-90") : _vm._e()
+            ],
+            1
+          )
         }),
         0
       )
@@ -38318,16 +38832,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
-      _c("div", { staticClass: "checkout-btn" }, [_vm._v("Check out")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -39187,6 +39692,72 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=template&id=758def57&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "recipe-card" }, [
+    _c(
+      "div",
+      { staticClass: "recipe-card-img" },
+      [
+        _c("img", {
+          staticClass: "crown",
+          attrs: {
+            src: "/assets/img/icons/crown.png",
+            alt: "urfridge.com | crown icon png"
+          }
+        }),
+        _vm._v(" "),
+        _c("font-awesome-icon", {
+          staticClass: "loved-btn",
+          attrs: { icon: "heart" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          attrs: {
+            src: "/storage/img/recipes/" + _vm.recipe.image_url,
+            alt: "#"
+          }
+        })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "recipe-card-body" }, [
+      _c("h4", { staticClass: "recipe-title" }, [
+        _vm._v(_vm._s(_vm.recipe.title))
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "recipe-desc" }, [
+        _vm._v(_vm._s(_vm.recipe.description))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "loved-by" }, [
+        _vm._v(_vm._s(_vm.recipe.number_loves) + " ❤️ this")
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -40264,6 +40835,27 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/explore-main.vue?vue&type=style&index=0&id=56202277&scoped=true&lang=css&");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.id, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! !../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("52e02e5e", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/recipes-main.vue?vue&type=style&index=0&id=a0e816b6&scoped=true&lang=css&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/main/recipes-main.vue?vue&type=style&index=0&id=a0e816b6&scoped=true&lang=css& ***!
@@ -40490,6 +41082,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! !../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("581b1b8e", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!../../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/vue/components/royal-recipe-card.vue?vue&type=style&index=0&id=758def57&lang=scss&scoped=true&");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.id, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! !../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("83b30352", content, false, {});
 // Hot Module Replacement
 if(false) {}
 

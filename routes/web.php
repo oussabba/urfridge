@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/signin', [PagesController::class, 'signinPage']);
 Route::get('/signup', [PagesController::class, 'signupPage']);
 Route::get('/recipe/{id}/{title}', [PagesController::class, 'recipePage'])->whereNumber('id')->whereAlpha('title');
 Route::get('/book/{id}/{title}', [PagesController::class, 'bookPage'])->whereNumber('id')->whereAlpha('title');
+
+
