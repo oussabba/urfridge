@@ -45,16 +45,28 @@
       </div>
     </div>
     <ad-728-90></ad-728-90>
-    <div class="row">
-      <h3>Preparation steps:</h3>
+    <div class="row line">
+      <h5>Preparation steps:</h5>
       <div @click="addNewStep()" id="add-step-btn">Add a step</div>
     </div>
-    <div id="steps-container" class="row">
-      <!-- <div class="col-1">{{ stepsCounter }}.</div>
-      <div class="col-11">
-        <input type="text" name="step" id="step" class="step-input form-control" />
-      </div>-->
+    <div id="steps-container" class="row"></div>
+    <div class="row line">
+      <h5>Estimated time to prepare this recipe:</h5>
+      <input type="number" name="time-needed" id="time" class="form-control needed-time" />
     </div>
+    <div class="row line">
+      <h5>Give a title to your dish:</h5>
+    </div>
+    <input type="text" name="title" id="title" class="form-control recipe-title" />
+    <div class="row line">
+      <h5>A little description may help:</h5>
+    </div>
+    <textarea name="description" id="discription" cols="122" rows="5"></textarea>
+    <div class="row line">
+      <h5>Add picture to your recipe:</h5>
+      <input type="file" name="image" id="image" class="form-control recipe-img" />
+    </div>
+    <div class="submit-recipe-btn">Add</div>
   </div>
 </template>
 <script>
@@ -188,5 +200,45 @@ img {
 .step-input {
   width: 100%;
   border-radius: 20px;
+}
+.needed-time {
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  margin-left: 40px;
+}
+.recipe-title {
+  border-radius: 15px;
+}
+textarea {
+  border-radius: 20px;
+  padding: 10px;
+}
+textarea:focus {
+  outline: none;
+}
+.recipe-img {
+  margin-left: 40px;
+  border-radius: 10px;
+  width: 260px;
+}
+.submit-recipe-btn {
+  background-color: #2c5d63;
+  color: white;
+  height: 50px;
+  width: 180px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.line {
+  margin-top: 25px;
 }
 </style>

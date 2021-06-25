@@ -36,6 +36,7 @@ export default {
   width: 100%;
   color: white;
   min-height: 150px;
+  position: relative;
 }
 .recipe-card-img {
   height: 220px;
@@ -49,8 +50,9 @@ h4 {
 }
 .loved-by {
   font-size: 18px;
+  // text-align: center;
   position: absolute;
-  bottom: 0px;
+  bottom: 5px;
   left: 50%;
   transform: translate(-50%, 0);
 }

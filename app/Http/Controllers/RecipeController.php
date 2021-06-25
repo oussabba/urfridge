@@ -174,4 +174,15 @@ class RecipeController extends Controller
     public function getRoyalRecipes(Request $request){
         return $this->recipeRepository->getRoyalRecipes($request);
     }
+
+    public function getRoyalRecipePrice($id){
+        return $this->recipeRepository->getRoyalRecipePrice($id);
+    }
+
+    /* Search recipes by ingredients */
+
+    public function searchRecipesByIngredients(Request $request){
+        return $this->recipeRepository->searchRecipes($request);
+    }
+
 }

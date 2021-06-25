@@ -24,6 +24,7 @@ use PhpParser\Node\Expr\FuncCall;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 //recipes
 Route::get('/recipes',[RecipeController::class,'index']);
 Route::get('/recipes/all',[RecipeController::class,'getSortedRecipes']);
@@ -43,6 +44,8 @@ Route::get('/recipe/{id}/keywords',[RecipeController::class,'getRecipeKeywords']
 Route::get('/recipe/{id}/comments',[RecipeController::class,'getRecipeComments']);
 //get a recipe by id
 Route::get('/recipe/{id}',[RecipeController::class,'getRecipe']);
+//Search recipes by ingredients
+Route::get('/search/recipes',[RecipeController::class,'searchRecipesByIngredients']);
 //search for a recipe
 Route::get('/searchRecipes',[RecipeController::class,'searchRecipeByTitle']);
 //Carousel banner
@@ -55,6 +58,8 @@ Route::get('/ing-categories',[RecipeController::class,'getCategories']);
 Route::get('/ingredients',[RecipeController::class,'getIndredients']);
 //get royal recipes
 Route::get('/royal-recipes',[RecipeController::class,'getRoyalRecipes']);
+//get royal recipe price
+Route::get('/royal-recipes/{id}/price',[RecipeController::class,'getRoyalRecipePrice']);
 
 //books
 

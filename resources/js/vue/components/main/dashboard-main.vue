@@ -70,6 +70,31 @@
       </div>
     </div>
     <add-recipe-form id="recipe-form"></add-recipe-form>
+    <br />
+    <div class="row">
+      <div class="col-12">
+        <h1>Royal recipes:</h1>
+        <h5>You can use FridgeCoins to buy premium recipes…</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div v-for="(recipe,index) in royalRecipes.slice(0, 3)" :key="index" class="col-md-4">
+        <royal-recipe-card :recipe="recipe"></royal-recipe-card>
+        <!-- <div class="recipe-price">{{ getRoyalRecipePrice(recipe.id) }}</div> -->
+        <div class="recipe-price">{{ royalRecipePrice[index] }}</div>
+      </div>
+    </div>
+    <ad-728-90 v-if="royalRecipes.length>=3"></ad-728-90>
+    <div class="row">
+      <div v-for="(recipe,index) in royalRecipes.slice(3, 6)" :key="index" class="col-md-4">
+        <royal-recipe-card :recipe="recipe"></royal-recipe-card>
+        <!-- <div class="recipe-price">{{ getRoyalRecipePrice(recipe.id) }}</div> -->
+        <div class="recipe-price">{{ royalRecipePrice[index] }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="see-more-royal-btn">See more &#128081; recipes</div>
+    </div>
   </div>
 </template>
 <script>
@@ -78,6 +103,7 @@ import Ad728_90 from '../ads/ad-728-90'
 import Ad160_600 from '../ads/ad-160-600'
 import RecipeCard from '../saved-recipe-card'
 import AddRecipeForm from '../add-recipe-form'
+import RoyalRecipeCard from '../royal-recipe-card'
 
 
 export default {
@@ -86,6 +112,7 @@ export default {
     'ad-728-90': Ad728_90,
     'ad-160-600': Ad160_600,
     'recipe-card': RecipeCard,
+    'royal-recipe-card': RoyalRecipeCard,
     'add-recipe-form': AddRecipeForm,
   },
   data: function () {
@@ -94,6 +121,8 @@ export default {
       counter: 0,
       savedRecipes: [],
       lovedRecipes: [],
+      royalRecipes: [],
+      royalRecipePrice: ['20 ufc', '50 ufc', '60 ufc', '200 ufc', '150 ufc', '100 ufc'],
       url: 'http://' + document.location.hostname + ':8000/api/',
     }
   },
@@ -134,6 +163,25 @@ export default {
           console.log(error);
         })
     },
+    getRoyalRecipes() {
+      axios.get(this.url + 'royal-recipes?l=6')
+        .then(response => {
+          this.royalRecipes = response.data
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    },
+    getRoyalRecipePrice(id) {
+      axios.get(this.url + 'royal-recipes/' + id + '/price')
+        .then(response => {
+          console.log(response.data[0].price)
+          return response.data[0].price
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    },
     showRecipeForm() {
       document.getElementById("recipe-form").style.display = 'block';
     },
@@ -147,6 +195,7 @@ export default {
     this.getUser();
     this.getSavedRecipes();
     this.getLovedRecipes();
+    this.getRoyalRecipes();
   },
 }
 </script>
@@ -247,5 +296,28 @@ export default {
 }
 #recipe-form {
   display: none;
+}
+.see-more-royal-btn {
+  background-color: #2c5d63;
+  color: white;
+  border-radius: 30px;
+  height: 50px;
+  width: 200px;
+  margin: 30px auto;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.recipe-price {
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid gray;
+  width: 120px;
+  height: 30px;
+  padding-top: 4px;
+  text-align: center;
+  margin: 20px auto;
 }
 </style>

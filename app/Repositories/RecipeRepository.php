@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use \stdClass;
 
 /**
  * Class RecipeRepository.
@@ -185,5 +186,45 @@ class RecipeRepository
         ->groupBy('recipes.id')
         ->limit($limit)
         ->get();
+    }
+
+    public function getRoyalRecipePrice($id){
+        return DB::table('royal_recipe_price')->where('id_recipe', $id)->get();
+    }
+
+    public function searchRecipes($request){
+        $recipes = array();
+        $ingredients = $request->ing;
+        //search for all the recipes that have a least 1 of these ingredients
+        $recipesAtLeastOne = DB::table('recipes')
+        ->join('recipe_ingredient', 'recipe_ingredient.id_recipe', '=', 'recipes.id')
+        ->select('recipes.id')
+        ->where('recipe_ingredient.id_ingredient', $ingredients)
+        ->get();
+
+        //Check out for each of these recipes if it contains all the wanted ingredients
+        foreach ($recipesAtLeastOne as $idRecipe => $idRecipeValue) {
+            $counter=0;
+            $length = count($ingredients);
+            foreach ($ingredients as $key => $ingredientValue) {
+                $counter ++;
+                $exist = DB::table('recipe_ingredient')
+                ->select('recipe_ingredient.id_recipe')
+                ->where([
+                    ['recipe_ingredient.id_ingredient','=', $ingredientValue],
+                    ['recipe_ingredient.id_recipe','=', $idRecipeValue->id]
+                        ])
+                ->count();
+                if($exist==0){
+                    break;
+                }
+                if($counter==$length){
+                    $recipe = new stdClass();
+                    $recipe = Recipe::find($idRecipeValue->id);
+                    array_push($recipes,$recipe);
+                }
+            }
+        }
+        return $recipes;
     }
 }
