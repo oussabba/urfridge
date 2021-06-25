@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="find-btn">Find a recipe</div>
+      <div @click="generateUrl()" class="find-btn">Find a recipe</div>
     </div>
   </div>
 </template>
@@ -66,7 +66,8 @@ export default {
       categories: [],
       ingredients: [],
       selectedCategorie: [],
-      selectedIngredients: []
+      selectedIngredients: [],
+      ingredientsUrl: '/search-ingredients?'
     }
   },
   methods: {
@@ -102,6 +103,10 @@ export default {
     },
     clearSelectedList() {
       this.selectedIngredients = [];
+    },
+    generateUrl() {
+      this.selectedIngredients.forEach(element => this.ingredientsUrl += "i[]=" + element.id_ingredient + "&");
+      window.location.href = this.ingredientsUrl.slice(0, -1);
     }
   },
   created() {

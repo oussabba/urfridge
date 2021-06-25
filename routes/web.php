@@ -17,6 +17,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/search', [PagesController::class, 'searchPage']);
+Route::get('/search-ingredients', [PagesController::class, 'searchByIngredientsPage']);
 Route::get('/explore', [PagesController::class, 'explorePage']);
 Route::get('/recipes', [PagesController::class, 'recipesPage']);
 Route::get('/books', [PagesController::class, 'booksPage']);

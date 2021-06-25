@@ -194,7 +194,7 @@ class RecipeRepository
 
     public function searchRecipes($request){
         $recipes = array();
-        $ingredients = $request->ing;
+        $ingredients = $request->i;
         //search for all the recipes that have a least 1 of these ingredients
         $recipesAtLeastOne = DB::table('recipes')
         ->join('recipe_ingredient', 'recipe_ingredient.id_recipe', '=', 'recipes.id')
@@ -220,7 +220,13 @@ class RecipeRepository
                 }
                 if($counter==$length){
                     $recipe = new stdClass();
-                    $recipe = Recipe::find($idRecipeValue->id);
+                    // $recipe = Recipe::find($idRecipeValue->id);
+                    $recipe = DB::table('recipes')
+                    ->join('recipe_ingredient', 'recipe_ingredient.id_recipe', '=', 'recipes.id')
+                    ->select('recipes.*',DB::raw("COUNT(recipe_ingredient.id_recipe) AS number_ingredients"))
+                    ->where('recipe_ingredient.id_recipe','=',$idRecipeValue->id)
+                    ->groupBy('recipes.id')
+                    ->get()[0];
                     array_push($recipes,$recipe);
                 }
             }

@@ -6,6 +6,7 @@ use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\IngredientController;
 
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
@@ -38,6 +39,7 @@ Route::prefix('/recipe')->group( Function(){
 Route::get('/recipe/{id}/loves',[RecipeController::class,'getRecipeLoves']);
 //get recipe ingredients
 Route::get('/recipe/{id}/ingredients',[RecipeController::class,'getRecipeIngredients']);
+Route::get('/recipe/{id}/number-ingredients',[IngredientController::class,'getNumberOfIngredientsInRecipe']);
 //get recipe keywords
 Route::get('/recipe/{id}/keywords',[RecipeController::class,'getRecipeKeywords']);
 //get recipe comments
@@ -60,6 +62,9 @@ Route::get('/ingredients',[RecipeController::class,'getIndredients']);
 Route::get('/royal-recipes',[RecipeController::class,'getRoyalRecipes']);
 //get royal recipe price
 Route::get('/royal-recipes/{id}/price',[RecipeController::class,'getRoyalRecipePrice']);
+
+//Ingredients
+Route::get('/ingredient/{id}/name',[IngredientController::class,'getIngredientLabel']);
 
 //books
 

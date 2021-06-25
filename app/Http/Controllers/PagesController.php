@@ -16,6 +16,11 @@ class PagesController extends Controller
         return view('search');
     }
 
+    public function searchByIngredientsPage()
+    {
+        return view('result-search');
+    }
+
     public function explorePage()
     {
         return view('explore');
