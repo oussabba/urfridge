@@ -2,7 +2,9 @@
   <div class="container">
     <carousel-banner></carousel-banner>
     <search-recipes-by-ingredients></search-recipes-by-ingredients>
+    <br />
     <last-added-recipes></last-added-recipes>
+    <br />
     <h1>Most loved recipes:</h1>
     <most-loved-recipes :numberRecipes="8"></most-loved-recipes>
     <search-recipes></search-recipes>

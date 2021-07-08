@@ -5,18 +5,20 @@
       <div class="col-md-7">
         <div class="row">
           <div v-for="(book,index) in mostLovedBooks " :key="index" class="book col-md-6">
-            <img
-              :src="'/storage/img/books/'+ book.cover_url[0]"
-              :alt="'urfridge.com | ' + book.title"
-            />
-            <div class="book-title">{{ book.title }}</div>
-            <center>
-              <hr />
-            </center>
-            <div class="book-loves">
-              {{ book.loves }}
-              <font-awesome-icon icon="heart" class="heart" />&nbsp;this
-            </div>
+            <a :href="hostName + book.id + '/' + seoFriendlyTitle(book.title)">
+              <img
+                :src="'/storage/img/books/'+ book.cover_url[0]"
+                :alt="'urfridge.com | ' + book.title"
+              />
+              <div class="book-title">{{ book.title }}</div>
+              <center>
+                <hr />
+              </center>
+              <div class="book-loves">
+                {{ book.loves }}
+                <font-awesome-icon icon="heart" class="heart" />&nbsp;this
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -36,7 +38,8 @@ export default {
   data: function () {
     return {
       mostLovedBooks: [],
-      url: 'http://' + document.location.hostname + ':8000/api/books/sorted/loves?l=6'
+      url: 'http://' + document.location.hostname + ':8000/api/books/sorted/loves?l=6',
+      hostName: 'http://127.0.0.1:8000/book/',
     }
   },
   methods: {
@@ -48,6 +51,18 @@ export default {
         .catch(error => {
           console.log(error);
         })
+    },
+    seoFriendlyTitle(title) {
+      return title.toString()               // Convert to string
+        .normalize('NFD')               // Change diacritics
+        .replace(/[\u0300-\u036f]/g, '') // Remove illegal characters
+        .replace(/\s+/g, '-')            // Change whitespace to dashes
+        .toLowerCase()                  // Change to lowercase
+        .replace(/&/g, '-and-')          // Replace ampersand
+        .replace(/[^a-z0-9\-]/g, '')     // Remove anything that is not a letter, number or dash
+        .replace(/-+/g, '-')             // Remove duplicate dashes
+        .replace(/^-*/, '')              // Remove starting dashes
+        .replace(/-*$/, '');
     }
   },
   created() {
@@ -75,8 +90,8 @@ hr {
 .book-title {
   min-height: 55px;
 }
-/* ad-300-600 {
-  position: sticky !important;
-  top: 20px;
-} */
+a {
+  text-decoration: none;
+  color: #283739;
+}
 </style>

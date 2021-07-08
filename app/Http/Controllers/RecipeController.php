@@ -185,4 +185,30 @@ class RecipeController extends Controller
         return $this->recipeRepository->searchRecipes($request);
     }
 
+    //save , like and comment a recipe
+
+    public function saveRecipe(Request $request){
+        return $this->recipeRepository->saveRecipe($request);
+    }
+
+    public function loveRecipe(Request $request){
+        return $this->recipeRepository->loveRecipe($request);
+    }
+
+    public function unsaveRecipe(Request $request){
+        return $this->recipeRepository->unsaveRecipe($request);
+    }
+
+    public function disloveRecipe(Request $request){
+        return $this->recipeRepository->disloveRecipe($request);
+    }
+
+    public function commentRecipe(Request $request){
+        return $this->recipeRepository->commentRecipe($request);
+    }
+
+    public function buyRoyalRecipe(Request $request){
+        return $this->recipeRepository->buyRoyalRecipe($request);
+    }
+
 }

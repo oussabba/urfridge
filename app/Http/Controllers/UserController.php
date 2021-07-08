@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -78,6 +79,10 @@ class UserController extends Controller
         return [
             'message' => 'logged out'
         ];
+    }
+
+    public function currentUser(){
+        return Auth::User();
     }
 
     public function getUser($id){

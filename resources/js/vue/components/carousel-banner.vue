@@ -17,8 +17,8 @@
       >
         <img class="d-block w-100" :src="slide.image_url" alt="Second slide" />
         <div class="carousel-caption">
-          <h2>{{ slide.title }}</h2>
-          <p>{{ slide.sub_title }}</p>
+          <h1>{{ slide.title }}</h1>
+          <h3>{{ slide.sub_title }}</h3>
         </div>
       </div>
     </div>
@@ -82,8 +82,11 @@ export default {
 .carousel-control-next {
   right: 0%;
 } */
-.carousel-inner h2,
-p {
+.carousel-inner h1,
+h3 {
   color: #283739 !important;
+}
+img {
+  height: 320px;
 }
 </style>

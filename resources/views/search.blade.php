@@ -15,6 +15,7 @@
     <div id="app">
         <navbar></navbar>
         <search-main></search-main>
+        <result-search-by-title></result-search-by-title>
         <social-media-bar></social-media-bar>
         <appfooter></appfooter>
     </div>

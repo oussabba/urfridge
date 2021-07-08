@@ -23,8 +23,8 @@ Route::get('/recipes', [PagesController::class, 'recipesPage']);
 Route::get('/books', [PagesController::class, 'booksPage']);
 Route::get('/signin', [PagesController::class, 'signinPage']);
 Route::get('/signup', [PagesController::class, 'signupPage']);
-Route::get('/recipe/{id}/{title}', [PagesController::class, 'recipePage'])->whereNumber('id')->whereAlpha('title');
-Route::get('/book/{id}/{title}', [PagesController::class, 'bookPage'])->whereNumber('id')->whereAlpha('title');
+Route::get('/recipe/{id}/{title}', [PagesController::class, 'recipePage'])->whereNumber('id');
+Route::get('/book/{id}/{title}', [PagesController::class, 'bookPage'])->whereNumber('id');
 
 //*** TMP****
 Route::get('/dashboard/{id}', [PagesController::class, 'dashboardPage'])->whereNumber('id');

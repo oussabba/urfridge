@@ -95,11 +95,19 @@ Route::get('/user/{id}/recipes/saved',[UserController::class,'getSavedRecipes'])
 Route::get('/user/{id}/recipes/loved',[UserController::class,'getLovedRecipes']);
 
 //get user [tmp]
-Route::get('/user/{id}',[UserController::class,'getUser']);
+// Route::get('/user/{id}',[UserController::class,'getUser']);
 
 //****Protected routes*****
 Route::group(['middleware' => ['auth:sanctum']],function(){
     Route::post('/logout',[UserController::class,'logout']);
+    Route::get('/current',[UserController::class,'currentUser']);
+
+    Route::post('/recipe/save',[RecipeController::class,'saveRecipe']);
+    Route::post('/recipe/love',[RecipeController::class,'loveRecipe']);
+    Route::post('/recipe/unsave',[RecipeController::class,'unsaveRecipe']);
+    Route::post('/recipe/dislove',[RecipeController::class,'disloveRecipe']);
+    Route::post('/recipe/comment',[RecipeController::class,'commentRecipe']);
+    Route::post('/royal-recipe/buy',[RecipeController::class,'buyRoyalRecipe']);
 });
 
 

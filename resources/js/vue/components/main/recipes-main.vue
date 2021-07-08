@@ -153,7 +153,12 @@ img {
 .recipe-footer {
   text-align: center;
   font-size: 18px;
-  margin-top: 150px;
+  /* margin-top: 130px; */
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
 }
 .checkout-btn {
   background-color: #2c5d63;

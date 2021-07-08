@@ -33,6 +33,7 @@
         <ad-300-600></ad-300-600>
       </div>
     </div>
+    <br />
     <div class="row">
       <div class="col-md-6 row">
         <div class="share">Share this recipe</div>
@@ -133,6 +134,7 @@ h2 span {
 }
 .process {
   font-size: 20px;
+  margin-top: 20px;
 }
 .share,
 .save-text {

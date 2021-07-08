@@ -97,3 +97,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+hr {
+  margin: 10px;
+}
+</style>

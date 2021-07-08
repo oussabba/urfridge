@@ -160,7 +160,7 @@ export default {
   cursor: pointer;
 }
 .ingredients {
-  width: 70%;
+  width: 80%;
   margin: auto auto;
 }
 .ing {
@@ -172,6 +172,7 @@ export default {
   height: 40px;
   text-align: center;
   padding-top: 8px;
+  /* padding-left: 15px; */
   cursor: pointer;
 }
 img {

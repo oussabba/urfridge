@@ -16,7 +16,7 @@
                 name="user"
                 id="user"
                 class="form-control form-input"
-                v-model="email"
+                v-model="user.email"
               />
             </div>
           </div>
@@ -30,12 +30,12 @@
                 name="password"
                 id="password"
                 class="form-control form-input"
-                v-model="password"
+                v-model="user.password"
               />
             </div>
           </div>
           <div class="row">
-            <input type="submit" value="Sign in" name="submit" class="submit-btn" />
+            <input @click="login" type="submit" value="Sign in" name="submit" class="submit-btn" />
           </div>
           <div class="row">
             <p class="form-sentence">
@@ -68,9 +68,21 @@
 export default {
   data: function () {
     return {
-      email: '',
-      password: '',
+      user: {
+        email: '',
+        password: '',
+      }
     }
+  },
+  methods: {
+    login() {
+      this.$store.dispatch('currentUser/loginUser', this.user)
+    },
   }
 };
 </script>
+<style scoped>
+hr {
+  margin: 10px;
+}
+</style>

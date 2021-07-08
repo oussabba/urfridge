@@ -12,19 +12,19 @@
       </div>
     </div>
     <ad-720-300></ad-720-300>
-    <h1>Here is your saved saved recipes:</h1>
+    <h1>Here is your saved recipes:</h1>
     <div class="row">
       <div v-for="(recipe,index) in savedRecipes.slice(0, 4) " :key="index" class="col-md-3">
         <recipe-card :recipe="recipe"></recipe-card>
       </div>
     </div>
-    <ad-728-90 v-if="savedRecipes.length>=4"></ad-728-90>
+    <ad-728-90 v-if="savedRecipes.length>4"></ad-728-90>
     <div class="row">
       <div v-for="(recipe,index) in savedRecipes.slice(4, 8) " :key="index" class="col-md-3">
         <recipe-card :recipe="recipe"></recipe-card>
       </div>
     </div>
-    <ad-728-90 v-if="savedRecipes.length>=8"></ad-728-90>
+    <!-- <ad-728-90 v-if="savedRecipes.length>8"></ad-728-90> -->
     <div class="row">
       <div v-for="(recipe,index) in savedRecipes.slice(8, 12) " :key="index" class="col-md-3">
         <recipe-card :recipe="recipe"></recipe-card>
@@ -117,7 +117,7 @@ export default {
   },
   data: function () {
     return {
-      user: {},
+      // user: {},
       counter: 0,
       savedRecipes: [],
       lovedRecipes: [],
@@ -133,16 +133,16 @@ export default {
         url.lastIndexOf("/dashboard") + 11
       );
     },
-    getUser() {
-      var id = this.getUserId();
-      axios.get(this.url + 'user/' + id)
-        .then(response => {
-          this.user = response.data[0]
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    },
+    // getUser() {
+    //   var id = this.getUserId();
+    //   axios.get(this.url + 'user/' + id)
+    //     .then(response => {
+    //       this.user = response.data[0]
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     })
+    // },
     getSavedRecipes() {
       var id = this.getUserId();
       axios.get(this.url + 'user/' + id + '/recipes/saved')
@@ -186,12 +186,21 @@ export default {
       document.getElementById("recipe-form").style.display = 'block';
     },
   },
+  computed: {
+    user: {
+      get() {
+        return this.$store.state.currentUser.user;
+      }
+    }
+  },
   filters: {
     subStr: function (string) {
       return string.substring(0, 60) + '...';
     },
   },
   created() {
+    axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("userToken");
+    this.$store.dispatch('currentUser/getUser');
     this.getUser();
     this.getSavedRecipes();
     this.getLovedRecipes();
@@ -231,12 +240,12 @@ export default {
   cursor: pointer;
 }
 .loved-recipe {
-  height: 60px;
+  height: 80px;
   width: 100%;
   margin-top: 8px;
 }
 .loved-recipe img {
-  height: 60px;
+  height: 80px;
   width: 100%;
   border-radius: 20px 0px 0px 20px;
   border: 1px solid gray;

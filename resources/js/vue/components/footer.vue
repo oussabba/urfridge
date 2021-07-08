@@ -3,7 +3,7 @@
     <div class="footer-1"></div>
     <div class="footer-text">
       urfridge.com | Created & designed with &#10084;&#65039; by
-      <a href="#">Sun Microsystem</a>
+      <a href="#">Oussama Babile</a>
     </div>
     <div class="footer-2">
       <a href="#">

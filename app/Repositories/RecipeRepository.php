@@ -233,4 +233,75 @@ class RecipeRepository
         }
         return $recipes;
     }
+    public function saveRecipe($request){
+        $idUser = $request->user;
+        $idRecipe = $request->recipe;
+        return DB::table('save_recipe')->insert([
+            'id_user' => $idUser,
+            'id_recipe' => $idRecipe
+        ]);
+    }
+
+    public function loveRecipe($request){
+        $idUser = $request->user;
+        $idRecipe = $request->recipe;
+        return DB::table('love_recipe')->insert([
+            'id_user' => $idUser,
+            'id_recipe' => $idRecipe
+        ]);
+    }
+
+    public function unsaveRecipe($request){
+        $idUser = $request->user;
+        $idRecipe = $request->recipe;
+        return DB::table('save_recipe')
+        ->where([
+            ['id_user',$idUser],
+            ['idRecipe',$idRecipe]
+            ])
+        ->delete();
+    }
+
+    public function disloveRecipe($request){
+        $idUser = $request->user;
+        $idRecipe = $request->recipe;
+        return DB::table('love_recipe')
+        ->where([
+            ['id_user',$idUser],
+            ['idRecipe',$idRecipe]
+            ])
+        ->delete();
+    }
+
+    public function commentRecipe($request){
+        $idUser = $request->user;
+        $idRecipe = $request->recipe;
+        $comment = $request->comment;
+        return DB::table('comment')->insert([
+            'id_user' => $idUser,
+            'id_recipe' => $idRecipe,
+            'text' => $comment
+        ]);
+    }
+
+    public function buyRoyalRecipe($request){
+        $idUser = $request->user;
+        $idRecipe = $request->recipe;
+        $comment = $request->comment;
+        $userBalance = DB::table('coins_balance')
+        ->select('balance')
+        ->where('id_user', $idUser)->get();
+        $recipePrice = DB::table('royal_recipe_price')
+        ->select('price')
+        ->where('id_recipe', $idUser)->get();
+        if($userBalance >= $recipePrice){
+            return DB::table('buy_recipe')->insert([
+            'id_user' => $idUser,
+            'id_recipe' => $idRecipe,
+        ]);
+        }else{
+            return "Votre balance est insuffisant pour acheter cette recette";
+        }
+        
+    }
 }

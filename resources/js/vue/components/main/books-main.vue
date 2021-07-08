@@ -19,7 +19,7 @@ export default {
     'last-added': LastAddedBooks,
     'most-loved': MostLovedBooks,
     'book-proposal': BookProposal
-  }
+  },
 }
 </script>
 

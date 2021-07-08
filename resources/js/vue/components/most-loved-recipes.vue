@@ -1,7 +1,7 @@
 <template>
   <div class="most-loved-recipes">
     <div class="row">
-      <div v-for="(recipe,index) in sortedRecipesByLove " :key="index" class="col">
+      <div v-for="(recipe,index) in sortedRecipesByLove " :key="index" class="col-md-3">
         <recipe-card :recipe="recipe"></recipe-card>
       </div>
     </div>
